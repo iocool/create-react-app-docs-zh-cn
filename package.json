@@ -1,0 +1,8 @@
+{
+  "name": "create-react-app-docs-zh-cn",
+  "version": "0.0.1",
+  "description": "create-react-app 中文文档",
+  "main": "index.js",
+  "author": "iocool <fannypanther@gmail.com>",
+  "license": "MIT"
+}
