@@ -6,13 +6,13 @@
 
 # Create React App 中文文档
 
-创建没有构建配置的 React 应用.
+创建无需构建配置的 React 应用.
 
 * [创建应用](#创建应用) – 如何创建一个新的应用.
 * [用户指南](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md)   – 如何使用 Create React App 引导开发应用.
 
 Create React App 适用于 MacOs Windows 和 Linux.<br>
-如果某些功能无效,请提交 [issue](https://github.com/facebookincubator/create-react-app/issues/new).
+如果在使用过程中出现任何问题,请提交 [issue](https://github.com/facebookincubator/create-react-app/issues/new).
 
 ## 快速开始
 
@@ -33,10 +33,10 @@ npm start
 
 ### 立即开始
 
-**并不需要** 安装或配置类似 webpack 或者 Babel 类的工具. <br>
-大部分配置都是不可见并预先配置好的,这样我们只需要专注于代码的书写.
+**不需要** 安装或配置类似 webpack 或者 Babel 类的工具. <br>
+大部分配置都是预先配置好的,项目中是看不到这些配置的,这样的话我们就可以专注于代码的书写而不用过多的在意项目该如何配置.
 
-只需要创建一个项目,一切都准备好了.
+只需要创建一个项目,所有的一切就都搞定了.
 
 ## 创建应用
 
@@ -89,22 +89,22 @@ my-app
     └── registerServiceWorker.js
 ```
 
-没有多余的配置文件或复杂的文件结构,只有构建应用所需的文件.<br>
+不会产生多余的配置文件或复杂的文件结构,只有构建应用所需的文件.<br>
 安装完成后,打开项目文件夹:
 
 ```sh
 cd my-app
 ```
 
-在新创建的项目中,可以运行一些内置命令:
+在新创建的项目中,就可以运行一些内置的命令:
 
 ### `npm start` 或 `yarn start`
 
 在开发模式 (development mode) 下运行应用.<br>
-在浏览器中访问 [http://localhost:3000](http://localhost:3000) ,可以查看引用.
+在浏览器中访问 [http://localhost:3000](http://localhost:3000) ,可以查看页面.
 
 如果代码有修改,将自动重新加载页面.<br>
-构建错误信息和 lint 警告信息会显示在控制台中.
+构建过程中,出现的错误信息和 lint 警告信息会显示在控制台中.
 
 <p align='center'>
 <img src='https://cdn.rawgit.com/marionebl/create-react-app/9f62826/screencast-error.svg' width='600' alt='Build errors'>
