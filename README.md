@@ -127,123 +127,122 @@ build 模式会尽可能的压缩打包文件,并在打包的文件名中加入�
 通常情况下,还包括一个 [service worker](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#making-a-progressive-web-app) ,以便于后续访问应用的时候直接从本地缓存中加载. <br>
 到这里,应用程序已经可以进行部署了.
 
-## User Guide
+## 用户指南
 
-The [User Guide](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md) includes information on different topics, such as:
+[用户指南](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md) 包括不同的主题,详情参见下面列表:
 
-- [Updating to New Releases](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#updating-to-new-releases)
-- [Folder Structure](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#folder-structure)
-- [Available Scripts](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#available-scripts)
-- [Supported Browsers](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#supported-browsers)
-- [Supported Language Features and Polyfills](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#supported-language-features-and-polyfills)
-- [Syntax Highlighting in the Editor](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#syntax-highlighting-in-the-editor)
-- [Displaying Lint Output in the Editor](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#displaying-lint-output-in-the-editor)
-- [Formatting Code Automatically](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#formatting-code-automatically)
-- [Debugging in the Editor](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#debugging-in-the-editor)
-- [Changing the Page `<title>`](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#changing-the-page-title)
-- [Installing a Dependency](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#installing-a-dependency)
-- [Importing a Component](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#importing-a-component)
-- [Code Splitting](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#code-splitting)
-- [Adding a Stylesheet](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-a-stylesheet)
-- [Post-Processing CSS](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#post-processing-css)
-- [Adding a CSS Preprocessor (Sass, Less etc.)](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-a-css-preprocessor-sass-less-etc)
-- [Adding Images, Fonts, and Files](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-images-fonts-and-files)
-- [Using the `public` Folder](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#using-the-public-folder)
-- [Using Global Variables](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#using-global-variables)
-- [Adding Bootstrap](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-bootstrap)
-- [Adding Flow](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-flow)
-- [Adding a Router](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-a-router)
-- [Adding Custom Environment Variables](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-custom-environment-variables)
-- [Can I Use Decorators?](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#can-i-use-decorators)
-- [Fetching Data with AJAX Requests](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#fetching-data-with-ajax-requests)
-- [Integrating with an API Backend](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#integrating-with-an-api-backend)
-- [Proxying API Requests in Development](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#proxying-api-requests-in-development)
-- [Using HTTPS in Development](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#using-https-in-development)
-- [Generating Dynamic `<meta>` Tags on the Server](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#generating-dynamic-meta-tags-on-the-server)
-- [Pre-Rendering into Static HTML Files](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#pre-rendering-into-static-html-files)
-- [Running Tests](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#running-tests)
-- [Debugging Tests](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#debugging-tests)
-- [Developing Components in Isolation](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#developing-components-in-isolation)
-- [Publishing Components to npm](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#publishing-components-to-npm)
-- [Making a Progressive Web App](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#making-a-progressive-web-app)
-- [Analyzing the Bundle Size](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#analyzing-the-bundle-size)
-- [Deployment](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#deployment)
-- [Advanced Configuration](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#advanced-configuration)
-- [Troubleshooting](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#troubleshooting)
+- [版本更新](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#updating-to-new-releases)
+- [文件结构](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#folder-structure)
+- [script配置信息](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#available-scripts)
+- [浏览器支持](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#supported-browsers)
+- [支持的语法特点及 Polyfill](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#supported-language-features-and-polyfills)
+- [编辑器中的语法高亮](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#syntax-highlighting-in-the-editor)
+- [编辑器中 Lint 信息显示](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#displaying-lint-output-in-the-editor)
+- [代码自动格式化](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#formatting-code-automatically)
+- [编辑器中进行调试](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#debugging-in-the-editor)
+- [修改页面标题 `<title>`](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#changing-the-page-title)
+- [安装依赖项](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#installing-a-dependency)
+- [组件引入](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#importing-a-component)
+- [代码拆分](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#code-splitting)
+- [样式添加](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-a-stylesheet)
+- [CSS 处理](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#post-processing-css)
+- [CSS 预处理器 (Sass, Less etc.)](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-a-css-preprocessor-sass-less-etc)
+- [图像, 字体和文件的添加](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-images-fonts-and-files)
+- [`public` 文件夹的使用](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#using-the-public-folder)
+- [全局变量的使用](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#using-global-variables)
+- [添加 Bootstrap](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-bootstrap)
+- [添加 Flow](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-flow)
+- [添加路由 Router](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-a-router)
+- [添加自定义环境变量](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-custom-environment-variables)
+- [能否使用 修饰器](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#can-i-use-decorators)
+- [使用 AJAX 请求数据](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#fetching-data-with-ajax-requests)
+- [与后端的 API 集成](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#integrating-with-an-api-backend)
+- [在开发中使用代理 API 请求](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#proxying-api-requests-in-development)
+- [在开发中使用 HTTPS](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#using-https-in-development)
+- [在服务器上生成动态 `<meta>` 标签](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#generating-dynamic-meta-tags-on-the-server)
+- [预加载静态 HTML 文件](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#pre-rendering-into-static-html-files)
+- [运行测试 TEST](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#running-tests)
+- [调试测试 TEST](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#debugging-tests)
+- [开发组件 Components 的相互隔离](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#developing-components-in-isolation)
+- [发布组件 Components 到 npm](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#publishing-components-to-npm)
+- [开发渐进式网页应用 (PWA,即 Progressive Web App)](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#making-a-progressive-web-app)
+- [对打包文件大小的分析](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#analyzing-the-bundle-size)
+- [部署](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#deployment)
+- [高级配置](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#advanced-configuration)
+- [问题排查](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#troubleshooting)
 
-A copy of the user guide will be created as `README.md` in your project folder.
+在你的项目文件夹中会创建以户指南的副本为内容的 `README.md` 文件
 
-## How to Update to New Versions?
+## 如何更新到最新版本?
 
-Please refer to the [User Guide](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#updating-to-new-releases) for this and other information.
+有关此信息,请参阅 [用户指南](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#updating-to-new-releases)
 
-## Philosophy
+## 设计思想(Philosophy)
 
-* **One Dependency:** There is just one build dependency. It uses Webpack, Babel, ESLint, and other amazing projects, but provides a cohesive curated experience on top of them.
+* **一个依赖:** 只需一个构建依赖. 其中用到了 Webpack, Babel, ESLint, 以及其他的一些相当出色的项目, 将这些资源进行统一合理的整合,以提供一种更加出色的开发体验.
 
-* **No Configuration Required:** You don't need to configure anything. Reasonably good configuration of both development and production builds is handled for you so you can focus on writing code.
+* **无需配置:** 无需进行任何配置.针对开发环境和生产环境下会分别提供相应的合理配置信息,以便于我们可以更专注于代码的编写. 
 
-* **No Lock-In:** You can “eject” to a custom setup at any time. Run a single command, and all the configuration and build dependencies will be moved directly into your project, so you can pick up right where you left off.
+* **无锁定:** 可以随时使用 `eject`功能,使用户自己接管所有配置项,运行这一命令后,所有的配置和构建依赖都会移动到项目中,因此可以从上次停止的地方继续操作.
 
-## What’s Included?
+## 包含内容
 
-Your environment will have everything you need to build a modern single-page React app:
+项目环境中会涵盖构建单页 REACT 应用所需的一切:
 
-* React, JSX, ES6, and Flow syntax support.
-* Language extras beyond ES6 like the object spread operator.
-* Autoprefixed CSS, so you don’t need `-webkit-` or other prefixes.
-* A fast interactive unit test runner with built-in support for coverage reporting.
-* A live development server that warns about common mistakes.
-* A build script to bundle JS, CSS, and images for production, with hashes and sourcemaps.
-* An offline-first [service worker](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers) and a [web app manifest](https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/), meeting all the [Progressive Web App](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#making-a-progressive-web-app) criteria.
-* Hassle-free updates for the above tools with a single dependency.
+* React, JSX, ES6, 及 Flow 语法支持.
+* 超出 ES6 语言附加功能, 如对象扩展运算符等.
+* CSS 前缀自动补全 (Autoprefixed CSS) , 不再需要 如 `-webkit-` 或其他前缀.
+* 快速交互单元测试运行工具, 可输出相应的测试报告.
+* 启动即时开发服务器, 可实时显示常见的警告及错误.
+* 针对生产环境的构建配置脚本,用以对 JS, CSS 及图片资源打包, 并包含相应的文件 hash 值和资源映射等.
+* 优先加载离线资源 [service worker](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers) 和 [web app manifest](https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/), 满足 [PWA 标准 (Progressive Web App)](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#making-a-progressive-web-app).
+* 仅使用单个的依赖项即可对上述工具进行更新.
 
-Check out [this guide](https://github.com/nitishdayal/cra_closer_look) for an overview of how these tools fit together.
+查看[指南](https://github.com/nitishdayal/cra_closer_look)中概述信息,了解上述工具如何组合使用.
 
-The tradeoff is that **these tools are preconfigured to work in a specific way**. If your project needs more customization, you can ["eject"](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#npm-run-eject) and customize it, but then you will need to maintain this configuration.
+在一些特殊情况下,以上工具都会被 **预先配置好**,这也是一个折中的方案.如果希望更多的配置,或自定义配置,可以使用 [eject](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#npm-run-eject) 命令来自定义,当然后续的配置都得由我们自己来进行维护.
 
-## Popular Alternatives
+## 其他热门的方案
 
-Create React App is a great fit for:
+Create React App 适用于这些场景:
 
-* **Learning React** in a comfortable and feature-rich development environment.
-* **Starting new single-page React applications.**
-* **Creating examples** with React for your libraries and components.
+* 相对功能丰富,开发便捷的开发环境下 **学习 React** .
+* **新的 React 单页应用.**
+* 使用 React 为库和组件**创建实例**.
 
-Here’s a few common cases where you might want to try something else:
+以下是一些常见的问题以及问题处理办法:
 
-* If you want to **try React** without hundreds of transitive build tool dependencies, consider [using a single HTML file or an online sandbox instead](https://reactjs.org/docs/try-react.html).
+* 如果需要使用没有依赖项以及一些构建工具项的 React ,可以使用 [单个HTML文件或在线沙箱](https://reactjs.org/docs/try-react.html)
 
-* If you need to **integrate React code with a server-side template framework** like Rails or Django, or if you’re **not building a single-page app**, consider using [nwb](https://github.com/insin/nwb), or [Neutrino](https://neutrino.js.org/) which are more flexible. For Rails specifically, you can use [Rails Webpacker](https://github.com/rails/webpacker).
+* 如果需要将 React 与服务器端模板框架（如 Rails 或 Django ）集成，或者不构建单页应用程序，请考虑使用更灵活的[nwb](https://github.com/insin/nwb) 或 [Neutrino](https://neutrino.js.org/). 特别是 Rails，可以使用 [Rails Webpacker](https://github.com/rails/webpacker).
 
-* If you need to **publish a React component**, [nwb](https://github.com/insin/nwb) can [also do this](https://github.com/insin/nwb#react-components-and-libraries), as well as [Neutrino's react-components preset](https://neutrino.js.org/packages/react-components/).
+* 如果需要发布 **React 组件** ,[nwb](https://github.com/insin/nwb) [也可以执行该操作](https://github.com/insin/nwb#react-components-and-libraries),当然使用 [Neutrino's react-components preset](https://neutrino.js.org/packages/react-components/)也可以.
 
-* If you want to do **server rendering** with React and Node.js, check out [Next.js](https://github.com/zeit/next.js/) or [Razzle](https://github.com/jaredpalmer/razzle). Create React App is agnostic of the backend, and just produces static HTML/JS/CSS bundles.
+* 如果想使用  React 和 Node.js 进行 **服务端渲染**, 可以查看 [Next.js](https://github.com/zeit/next.js/) 或 [Razzle](https://github.com/jaredpalmer/razzle). 创建 React App 与后端无关，这些工具只会生成静态的 HTML / JS / CSS 包.
 
-* If your website is **mostly static** (for example, a portfolio or a blog), consider using [Gatsby](https://www.gatsbyjs.org/) instead. Unlike Create React App, it pre-renders the website into HTML at the build time.
+* 如果网站以**静态**为主(如公司机构或博客),可使用 [Gatsby](https://www.gatsbyjs.org/) .与Create React App 不同,在构建时只会以 HTML 形式展现.
 
-* If you want to use **TypeScript**, consider using [create-react-app-typescript](https://github.com/wmonk/create-react-app-typescript).
+* 如果要使用 **TypeScript**, 请参照 [create-react-app-typescript](https://github.com/wmonk/create-react-app-typescript).
 
-* If you want to use **Parcel** instead of **Webpack** as your bundler, consider using [create-react-app-parcel](https://github.com/sw-yx/create-react-app-parcel).
+* 如果是使用 **Parcel** 替代 **Webpack** 作为打包工具, 请使用 [create-react-app-parcel](https://github.com/sw-yx/create-react-app-parcel).
 
-* Finally, if you need **more customization**, check out [Neutrino](https://neutrino.js.org/) and its [React preset](https://neutrino.js.org/packages/react/).
+* 最后,如果需要 **更多的定制**, 请参照 [Neutrino](https://neutrino.js.org/) 以及 [React preset](https://neutrino.js.org/packages/react/).
 
-All of the above tools can work with little to no configuration.
+以上所有工具都可以在少量配置甚至没有配置的情况下正常工作.
 
-If you prefer configuring the build yourself, [follow this guide](https://reactjs.org/docs/add-react-to-an-existing-app.html).
+如果更多倾向于自己配置以及构建项目,请参照 [指南]https://reactjs.org/docs/add-react-to-an-existing-app.html) 进行配置操作.
 
-## Contributing
+## 贡献
 
-We'd love to have your helping hand on `create-react-app`! See [CONTRIBUTING.md](CONTRIBUTING.md) for more information on what we're looking for and how to get started.
+我们很乐意在 `create-react-app` 这个项目上提供帮助! 有关目前我们在探索的以及一些如何入门的更多信息,请参阅 [CONTRIBUTING.md](https://github.com/facebook/create-react-app/blob/next/CONTRIBUTING.md)
 
 ## React Native
 
-Looking for something similar, but for React Native?<br>
-Check out [Create React Native App](https://github.com/react-community/create-react-native-app/).
+在 React Native 中遇到类似的问题,可参阅 [Create React Native App](https://github.com/react-community/create-react-native-app/).
 
-## Acknowledgements
+## 致谢
 
-We are grateful to the authors of existing related projects for their ideas and collaboration:
+我们感谢相关项目的作者通力的合作,以及他们付出的精力
 
 * [@eanplatter](https://github.com/eanplatter)
 * [@insin](https://github.com/insin)
@@ -251,4 +250,4 @@ We are grateful to the authors of existing related projects for their ideas and 
 
 ## License
 
-Create React App is open source software [licensed as MIT](https://github.com/facebook/create-react-app/blob/master/LICENSE).
+Create React App 遵循 [licensed as MIT](https://github.com/facebook/create-react-app/blob/master/LICENSE) 协议. 
