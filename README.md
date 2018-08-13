@@ -146,7 +146,7 @@ build 模式会尽可能的压缩打包文件,并在打包的文件名中加入�
 - [代码拆分](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#code-splitting)
 - [样式添加](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-a-stylesheet)
 - [CSS 处理](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#post-processing-css)
-- [CSS 预处理器 (Sass, Less etc.)](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-a-css-preprocessor-sass-less-etc)
+- [添加CSS 预处理器 (如Sass, Less 等.)](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-a-css-preprocessor-sass-less-etc)
 - [图像, 字体和文件的添加](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-images-fonts-and-files)
 - [`public` 文件夹的使用](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#using-the-public-folder)
 - [全局变量的使用](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#using-global-variables)
@@ -154,7 +154,7 @@ build 模式会尽可能的压缩打包文件,并在打包的文件名中加入�
 - [添加 Flow](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-flow)
 - [添加路由 Router](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-a-router)
 - [添加自定义环境变量](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-custom-environment-variables)
-- [能否使用 修饰器](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#can-i-use-decorators)
+- [能否使用修饰器](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#can-i-use-decorators)
 - [使用 AJAX 请求数据](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#fetching-data-with-ajax-requests)
 - [与后端的 API 集成](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#integrating-with-an-api-backend)
 - [在开发中使用代理 API 请求](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#proxying-api-requests-in-development)
@@ -163,7 +163,7 @@ build 模式会尽可能的压缩打包文件,并在打包的文件名中加入�
 - [预加载静态 HTML 文件](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#pre-rendering-into-static-html-files)
 - [运行测试 TEST](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#running-tests)
 - [调试测试 TEST](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#debugging-tests)
-- [开发组件 Components 的相互隔离](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#developing-components-in-isolation)
+- [开发独立组件 Components ](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#developing-components-in-isolation)
 - [发布组件 Components 到 npm](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#publishing-components-to-npm)
 - [开发渐进式网页应用 (PWA,即 Progressive Web App)](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#making-a-progressive-web-app)
 - [对打包文件大小的分析](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#analyzing-the-bundle-size)
@@ -230,7 +230,7 @@ Create React App 适用于这些场景:
 
 以上所有工具都可以在少量配置甚至没有配置的情况下正常工作.
 
-如果更多倾向于自己配置以及构建项目,请参照 [指南]https://reactjs.org/docs/add-react-to-an-existing-app.html) 进行配置操作.
+如果更多倾向于自己配置以及构建项目,请参照 [指南](https://reactjs.org/docs/add-react-to-an-existing-app.html) 进行配置操作.
 
 ## 贡献
 
