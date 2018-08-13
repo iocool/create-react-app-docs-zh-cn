@@ -29,8 +29,8 @@
 - [代码拆分](#代码拆分)
 - [样式添加](#样式添加)
 - [CSS 处理](#css处理)
-- [添加CSS 预处理器 (如Sass, Less 等)](#添加-css-预处理器(如-sass,-less-等))
-- [图像, 字体和文件的添加](#图像,字体和文件的添加)
+- [添加CSS 预处理器 (如Sass, Less 等)](#添加-css-预处理器如-sass-less-等)
+- [图像, 字体和文件的添加](#图像字体和文件的添加)
 - [`public` 文件夹的使用](#public-文件夹的使用)
   - [HTML 修改](#html修改)
   - [Adding Assets Outside of the Module System](#adding-assets-outside-of-the-module-system)
@@ -43,7 +43,7 @@
 - [添加自定义环境变量](#添加自定义环境变量)
   - [在 HTML 中引用环境变量](#在-html-中引用环境变量)
   - [在 Shell 中添加临时环境变量](#在-shell-中添加临时环境变量)
-  - [在 `.env` 文件中添加开发环境的变量](#在-.env-文件中添加开发环境的变量)
+  - [在 `.env` 文件中添加开发环境的变量](#在-env-文件中添加开发环境的变量)
 - [能否使用修饰器](#能否使用修饰器)
 - [使用 AJAX 请求数据](#使用-ajax-请求数据)
 - [与后端的 API 集成](#与后端的-api-集成)
@@ -78,10 +78,10 @@
   - [Storybook 入门](#storybook-入门)
   - [Styleguidist 入门](#styleguidist-入门)
 - [发布组件 Components 到 npm](#发布组件-components-到-npm)
-- [开发渐进式网页应用 (PWA,即 Progressive Web App)](#开发渐进式网页应用-(pwa,即-progressive-web-app))
+- [开发渐进式网页应用 (PWA,即 Progressive Web App)](#开发渐进式网页应用-pwa即-progressive-web-app)
   - [Opting Out of Caching](#opting-out-of-caching)
   - [优先考虑离线](#优先考虑离线)
-  - [PWA(Progressive Web App) 元数据](#pwa(progressive-web-app)-元数据)
+  - [PWA(Progressive Web App) 元数据](#pwaprogressive-web-app-元数据)
 - [对打包文件大小的分析](#对打包文件大小的分析)
 - [部署](#部署)
   - [静态服务器](#静态服务器)
@@ -1227,7 +1227,7 @@ HTTPS=true npm start
 
 Note that the server will use a self-signed certificate, so your web browser will almost definitely display a warning upon accessing the page.
 
-## 在服务器上生成动态 <meta> 标签
+## 在服务器上生成动态 `<meta>` 标签
 
 Since Create React App doesn’t support server rendering, you might be wondering how to make `<meta>` tags dynamic and reflect the current URL. To solve this, we recommend to add placeholders into the HTML, like this:
 
