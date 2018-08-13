@@ -9,7 +9,7 @@
 创建无需构建配置的 React 应用.
 
 * [创建应用](#创建应用) – 如何创建一个新的应用.
-* [用户指南](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md)   – 如何使用 Create React App 引导开发应用.
+* [用户指南](https://github.com/iocool/create-react-app-docs-zh-cn/blob/master/guide/README.md)   – 如何使用 Create React App 引导开发应用.
 
 Create React App 适用于 MacOs Windows 和 Linux.<br>
 如果在使用过程中出现任何问题,请提交 [issue](https://github.com/facebookincubator/create-react-app/issues/new).
@@ -116,7 +116,7 @@ cd my-app
 默认会测试最近提交修改后的文件.<br>
 (注: 原文: By default, runs tests related to files changed since the last commit. 此处翻译或许有问题,后续修改)
 
-[详细了解测试](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#running-tests)
+[详细了解测试](https://github.com/iocool/create-react-app-docs-zh-cn/tree/master/guide#%E8%BF%90%E8%A1%8C%E6%B5%8B%E8%AF%95-test)
 
 ### `npm run build` 或 `yarn build`
 
@@ -124,58 +124,58 @@ cd my-app
 build 模式将会合理的将 react 项目打包,并进行足够的优化,以保证在生产环境中获得最佳的性能.
 
 build 模式会尽可能的压缩打包文件,并在打包的文件名中加入文件内容的 hash.<br>
-通常情况下,还包括一个 [service worker](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#making-a-progressive-web-app) ,以便于后续访问应用的时候直接从本地缓存中加载. <br>
+通常情况下,还包括一个 [service worker](https://github.com/iocool/create-react-app-docs-zh-cn/tree/master/guide#%E5%BC%80%E5%8F%91%E6%B8%90%E8%BF%9B%E5%BC%8F%E7%BD%91%E9%A1%B5%E5%BA%94%E7%94%A8-pwa%E5%8D%B3-progressive-web-app) ,以便于后续访问应用的时候直接从本地缓存中加载. <br>
 到这里,应用程序已经可以进行部署了.
 
 ## 用户指南
 
-[用户指南](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md) 包括不同的主题,详情参见下面列表:
+[用户指南](https://github.com/iocool/create-react-app-docs-zh-cn/blob/master/guide/README.md) 包括不同的主题,详情参见下面列表:
 
-- [版本更新](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#updating-to-new-releases)
-- [文件结构](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#folder-structure)
-- [script配置信息](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#available-scripts)
-- [浏览器支持](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#supported-browsers)
-- [支持的语法特点及 Polyfill](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#supported-language-features-and-polyfills)
-- [编辑器中的语法高亮](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#syntax-highlighting-in-the-editor)
-- [编辑器中 Lint 信息显示](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#displaying-lint-output-in-the-editor)
-- [代码自动格式化](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#formatting-code-automatically)
-- [编辑器中进行调试](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#debugging-in-the-editor)
-- [修改页面标题 `<title>`](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#changing-the-page-title)
-- [安装依赖项](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#installing-a-dependency)
-- [组件引入](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#importing-a-component)
-- [代码拆分](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#code-splitting)
-- [样式添加](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-a-stylesheet)
-- [CSS 处理](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#post-processing-css)
-- [添加CSS 预处理器 (如Sass, Less 等.)](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-a-css-preprocessor-sass-less-etc)
-- [图像, 字体和文件的添加](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-images-fonts-and-files)
-- [`public` 文件夹的使用](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#using-the-public-folder)
-- [全局变量的使用](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#using-global-variables)
-- [添加 Bootstrap](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-bootstrap)
-- [添加 Flow](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-flow)
-- [添加路由 Router](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-a-router)
-- [添加自定义环境变量](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-custom-environment-variables)
-- [能否使用修饰器](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#can-i-use-decorators)
-- [使用 AJAX 请求数据](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#fetching-data-with-ajax-requests)
-- [与后端的 API 集成](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#integrating-with-an-api-backend)
-- [在开发中使用代理 API 请求](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#proxying-api-requests-in-development)
-- [在开发中使用 HTTPS](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#using-https-in-development)
-- [在服务器上生成动态 `<meta>` 标签](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#generating-dynamic-meta-tags-on-the-server)
-- [预加载静态 HTML 文件](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#pre-rendering-into-static-html-files)
-- [运行测试 TEST](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#running-tests)
-- [调试测试 TEST](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#debugging-tests)
-- [开发独立组件 Components ](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#developing-components-in-isolation)
-- [发布组件 Components 到 npm](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#publishing-components-to-npm)
-- [开发渐进式网页应用 (PWA,即 Progressive Web App)](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#making-a-progressive-web-app)
-- [对打包文件大小的分析](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#analyzing-the-bundle-size)
-- [部署](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#deployment)
-- [高级配置](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#advanced-configuration)
-- [问题排查](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#troubleshooting)
+- [更新到最新版](https://github.com/iocool/create-react-app-docs-zh-cn/blob/master/guide/README.md#%E6%9B%B4%E6%96%B0%E5%88%B0%E6%9C%80%E6%96%B0%E7%89%88)
+- [文件结构](https://github.com/iocool/create-react-app-docs-zh-cn/blob/master/guide/README.md#%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84)
+- [script配置信息](https://github.com/iocool/create-react-app-docs-zh-cn/blob/master/guide/README.md#script%E9%85%8D%E7%BD%AE%E4%BF%A1%E6%81%AF)
+- [浏览器支持](https://github.com/iocool/create-react-app-docs-zh-cn/blob/master/guide/README.md#%E6%B5%8F%E8%A7%88%E5%99%A8%E6%94%AF%E6%8C%81)
+- [支持的语法特点及 Polyfill](https://github.com/iocool/create-react-app-docs-zh-cn/blob/master/guide/README.md#%E6%94%AF%E6%8C%81%E7%9A%84%E8%AF%AD%E6%B3%95%E7%89%B9%E7%82%B9%E5%8F%8A-polyfill)
+- [编辑器中的语法高亮](https://github.com/iocool/create-react-app-docs-zh-cn/blob/master/guide/README.md#%E7%BC%96%E8%BE%91%E5%99%A8%E4%B8%AD%E7%9A%84%E8%AF%AD%E6%B3%95%E9%AB%98%E4%BA%AE)
+- [编辑器中 Lint 信息显示](https://github.com/iocool/create-react-app-docs-zh-cn/blob/master/guide/README.md#%E7%BC%96%E8%BE%91%E5%99%A8%E4%B8%AD-lint-%E4%BF%A1%E6%81%AF%E6%98%BE%E7%A4%BA)
+- [代码自动格式化](https://github.com/iocool/create-react-app-docs-zh-cn/blob/master/guide/README.md#%E4%BB%A3%E7%A0%81%E8%87%AA%E5%8A%A8%E6%A0%BC%E5%BC%8F%E5%8C%96)
+- [编辑器中进行调试](https://github.com/iocool/create-react-app-docs-zh-cn/blob/master/guide/README.md#%E7%BC%96%E8%BE%91%E5%99%A8%E4%B8%AD%E8%BF%9B%E8%A1%8C%E8%B0%83%E8%AF%95)
+- [修改页面标题 `<title>`](https://github.com/iocool/create-react-app-docs-zh-cn/blob/master/guide/README.md#%E4%BF%AE%E6%94%B9%E9%A1%B5%E9%9D%A2%E6%A0%87%E9%A2%98)
+- [安装依赖项](https://github.com/iocool/create-react-app-docs-zh-cn/blob/master/guide/README.md#%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96%E9%A1%B9)
+- [组件引入](https://github.com/iocool/create-react-app-docs-zh-cn/blob/master/guide/README.md#%E7%BB%84%E4%BB%B6%E5%BC%95%E5%85%A5)
+- [代码拆分](https://github.com/iocool/create-react-app-docs-zh-cn/blob/master/guide/README.md#%E4%BB%A3%E7%A0%81%E6%8B%86%E5%88%86)
+- [样式添加](https://github.com/iocool/create-react-app-docs-zh-cn/blob/master/guide/README.md#%E6%A0%B7%E5%BC%8F%E6%B7%BB%E5%8A%A0)
+- [CSS 处理](https://github.com/iocool/create-react-app-docs-zh-cn/blob/master/guide/README.md#css%E5%A4%84%E7%90%86)
+- [添加CSS 预处理器 (如Sass, Less 等.)](https://github.com/iocool/create-react-app-docs-zh-cn/blob/master/guide/README.md#%E6%B7%BB%E5%8A%A0-css-%E9%A2%84%E5%A4%84%E7%90%86%E5%99%A8%E5%A6%82-sass-less-%E7%AD%89)
+- [图像, 字体和文件的添加](https://github.com/iocool/create-react-app-docs-zh-cn/blob/master/guide/README.md#%E5%9B%BE%E5%83%8F%E5%AD%97%E4%BD%93%E5%92%8C%E6%96%87%E4%BB%B6%E7%9A%84%E6%B7%BB%E5%8A%A0)
+- [`public` 文件夹的使用](https://github.com/iocool/create-react-app-docs-zh-cn/blob/master/guide/README.md#public-%E6%96%87%E4%BB%B6%E5%A4%B9%E7%9A%84%E4%BD%BF%E7%94%A8)
+- [全局变量的使用](https://github.com/iocool/create-react-app-docs-zh-cn/blob/master/guide/README.md#%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E7%9A%84%E4%BD%BF%E7%94%A8)
+- [添加 Bootstrap](https://github.com/iocool/create-react-app-docs-zh-cn/blob/master/guide/README.md#%E6%B7%BB%E5%8A%A0-bootstrap)
+- [添加 Flow](https://github.com/iocool/create-react-app-docs-zh-cn/blob/master/guide/README.md#%E6%B7%BB%E5%8A%A0-flow)
+- [添加路由 Router](https://github.com/iocool/create-react-app-docs-zh-cn/blob/master/guide/README.md#%E6%B7%BB%E5%8A%A0%E8%B7%AF%E7%94%B1-router)
+- [添加自定义环境变量](https://github.com/iocool/create-react-app-docs-zh-cn/blob/master/guide/README.md#%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F)
+- [能否使用修饰器](https://github.com/iocool/create-react-app-docs-zh-cn/blob/master/guide/README.md#%E8%83%BD%E5%90%A6%E4%BD%BF%E7%94%A8%E4%BF%AE%E9%A5%B0%E5%99%A8)
+- [使用 AJAX 请求数据](https://github.com/iocool/create-react-app-docs-zh-cn/blob/master/guide/README.md#%E4%BD%BF%E7%94%A8-ajax-%E8%AF%B7%E6%B1%82%E6%95%B0%E6%8D%AE)
+- [与后端的 API 集成](https://github.com/iocool/create-react-app-docs-zh-cn/blob/master/guide/README.md#%E4%B8%8E%E5%90%8E%E7%AB%AF%E7%9A%84-api-%E9%9B%86%E6%88%90)
+- [在开发中使用代理 API 请求](https://github.com/iocool/create-react-app-docs-zh-cn/blob/master/guide/README.md#%E5%9C%A8%E5%BC%80%E5%8F%91%E4%B8%AD%E4%BD%BF%E7%94%A8%E4%BB%A3%E7%90%86-api-%E8%AF%B7%E6%B1%82)
+- [在开发中使用 HTTPS](https://github.com/iocool/create-react-app-docs-zh-cn/blob/master/guide/README.md#%E5%9C%A8%E5%BC%80%E5%8F%91%E4%B8%AD%E4%BD%BF%E7%94%A8-https)
+- [在服务器上生成动态 `<meta>` 标签](https://github.com/iocool/create-react-app-docs-zh-cn/blob/master/guide/README.md#%E5%9C%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E7%94%9F%E6%88%90%E5%8A%A8%E6%80%81-meta-%E6%A0%87%E7%AD%BE)
+- [预加载静态 HTML 文件](https://github.com/iocool/create-react-app-docs-zh-cn/blob/master/guide/README.md#%E9%A2%84%E5%8A%A0%E8%BD%BD%E9%9D%99%E6%80%81-html-%E6%96%87%E4%BB%B6)
+- [运行测试 TEST](https://github.com/iocool/create-react-app-docs-zh-cn/blob/master/guide/README.md#%E8%BF%90%E8%A1%8C%E6%B5%8B%E8%AF%95-test)
+- [调试测试 TEST](https://github.com/iocool/create-react-app-docs-zh-cn/blob/master/guide/README.md#%E8%B0%83%E8%AF%95%E6%B5%8B%E8%AF%95-test)
+- [开发独立组件 Components ](https://github.com/iocool/create-react-app-docs-zh-cn/blob/master/guide/README.md#%E5%BC%80%E5%8F%91%E7%8B%AC%E7%AB%8B%E7%BB%84%E4%BB%B6-components)
+- [发布组件 Components 到 npm](https://github.com/iocool/create-react-app-docs-zh-cn/blob/master/guide/README.md#%E5%8F%91%E5%B8%83%E7%BB%84%E4%BB%B6-components-%E5%88%B0-npm)
+- [开发渐进式网页应用 (PWA,即 Progressive Web App)](https://github.com/iocool/create-react-app-docs-zh-cn/blob/master/guide/README.md#%E5%BC%80%E5%8F%91%E6%B8%90%E8%BF%9B%E5%BC%8F%E7%BD%91%E9%A1%B5%E5%BA%94%E7%94%A8-pwa%E5%8D%B3-progressive-web-app)
+- [对打包文件大小的分析](https://github.com/iocool/create-react-app-docs-zh-cn/blob/master/guide/README.md#%E5%AF%B9%E6%89%93%E5%8C%85%E6%96%87%E4%BB%B6%E5%A4%A7%E5%B0%8F%E7%9A%84%E5%88%86%E6%9E%90)
+- [部署](https://github.com/iocool/create-react-app-docs-zh-cn/blob/master/guide/README.md#%E9%83%A8%E7%BD%B2)
+- [高级配置](https://github.com/iocool/create-react-app-docs-zh-cn/blob/master/guide/README.md#%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE)
+- [问题排查](https://github.com/iocool/create-react-app-docs-zh-cn/blob/master/guide/README.md#%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5)
 
 在你的项目文件夹中会创建以户指南的副本为内容的 `README.md` 文件
 
 ## 如何更新到最新版本?
 
-有关此信息,请参阅 [用户指南](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#updating-to-new-releases)
+有关此信息,请参阅 [用户指南](https://github.com/iocool/create-react-app-docs-zh-cn/blob/master/guide/README.md#%E6%9B%B4%E6%96%B0%E5%88%B0%E6%9C%80%E6%96%B0%E7%89%88)
 
 ## 设计思想(Philosophy)
 
@@ -195,12 +195,12 @@ build 模式会尽可能的压缩打包文件,并在打包的文件名中加入�
 * 快速交互单元测试运行工具, 可输出相应的测试报告.
 * 启动即时开发服务器, 可实时显示常见的警告及错误.
 * 针对生产环境的构建配置脚本,用以对 JS, CSS 及图片资源打包, 并包含相应的文件 hash 值和资源映射等.
-* 优先加载离线资源 [service worker](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers) 和 [web app manifest](https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/), 满足 [PWA 标准 (Progressive Web App)](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#making-a-progressive-web-app).
+* 优先加载离线资源 [service worker](https://developers.google.com/web/fundamentals/getting-started/primers/service-workers) 和 [web app manifest](https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/), 满足 [PWA 标准 (Progressive Web App)](https://github.com/iocool/create-react-app-docs-zh-cn/blob/master/guide/README.md#%E5%BC%80%E5%8F%91%E6%B8%90%E8%BF%9B%E5%BC%8F%E7%BD%91%E9%A1%B5%E5%BA%94%E7%94%A8-pwa%E5%8D%B3-progressive-web-app).
 * 仅使用单个的依赖项即可对上述工具进行更新.
 
 查看[指南](https://github.com/nitishdayal/cra_closer_look)中概述信息,了解上述工具如何组合使用.
 
-在一些特殊情况下,以上工具都会被 **预先配置好**,这也是一个折中的方案.如果希望更多的配置,或自定义配置,可以使用 [eject](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#npm-run-eject) 命令来自定义,当然后续的配置都得由我们自己来进行维护.
+在一些特殊情况下,以上工具都会被 **预先配置好**,这也是一个折中的方案.如果希望更多的配置,或自定义配置,可以使用 [eject](https://github.com/iocool/create-react-app-docs-zh-cn/blob/master/guide/README.md#npm-run-eject) 命令来自定义,当然后续的配置都得由我们自己来进行维护.
 
 ## 其他热门的方案
 
@@ -248,6 +248,6 @@ Create React App 适用于这些场景:
 * [@insin](https://github.com/insin)
 * [@mxstbr](https://github.com/mxstbr)
 
-## License
+## 许可证
 
-Create React App 遵循 [licensed as MIT](https://github.com/facebook/create-react-app/blob/master/LICENSE) 协议. 
+Create React App 遵循 [MIT 许可证](https://github.com/facebook/create-react-app/blob/master/LICENSE). 
