@@ -54,7 +54,7 @@
   - [手动配置代理](#手动配置代理)
   - [配置 WebSocket 代理](#配置-websocket-代理)
 - [在开发中使用 HTTPS](#在开发中使用-https)
-- [在服务器上生成动态 `<meta>` 标签](#在服务器上生成动态-<meta>-标签)
+- [在服务器上生成动态 `<meta>` 标签](#在服务器上生成动态-meta-标签)
 - [预加载静态 HTML 文件](#预加载静态-html-文件)
 - [在服务器端添加数据到页面](#在服务器端添加数据到页面)
 - [运行测试 TEST](#运行测试-test)
@@ -98,39 +98,39 @@
   - [Surge](#surge)
 - [高级配置](#高级配置)
 - [问题排查](#问题排查)
-  - [`npm start` doesn’t detect changes](#npm-start-doesnt-detect-changes)
-  - [`npm test` hangs on macOS Sierra](#npm-test-hangs-on-macos-sierra)
-  - [`npm run build` exits too early](#npm-run-build-exits-too-early)
-  - [`npm run build` fails on Heroku](#npm-run-build-fails-on-heroku)
+  - [`npm start` 后检测不到变化](#npm-start-后检测不到变化)
+  - [`npm test` 在 macOS Sierra 运行被挂起](#npm-test-在-macos-sierra-运行被挂起)
+  - [`npm run build` 提前退出](#npm-run-build-提前退出)
+  - [`npm run build` 在 Heroku 执行失败](#npm-run-build-在-Heroku-执行失败)
   - [`npm run build` fails to minify](#npm-run-build-fails-to-minify)
-  - [Moment.js locales are missing](#momentjs-locales-are-missing)
+  - [Moment.js 缺少语言支持](#moment.js-缺少语言支持)
 - [Eject 替代方案](#eject-替代方案)
 - [您觉得不足之处](#您觉得不足之处)
 
 ## 更新到最新版
 
-Create React App is divided into two packages:
+Create React App 分为两个包:
 
-* `create-react-app` is a global command-line utility that you use to create new projects.
-* `react-scripts` is a development dependency in the generated projects (including this one).
+* `create-react-app` 是一个全局的命令行程序,可用来创建新项目.
+* `react-scripts` 是用来生成在具体项目的第三方依赖项及配置.
 
-You almost never need to update `create-react-app` itself: it delegates all the setup to `react-scripts`.
+通常情况下,我们几乎不用去更新 `create-react-app`,因为 `react-scripts` 会承担起相应的安装及配置操作.
 
-When you run `create-react-app`, it always creates the project with the latest version of `react-scripts` so you’ll get all the new features and improvements in newly created apps automatically.
+当运行 `create-react-app`时, `react-scripts` 始终会使用最新版本来创建项目,因此在项目创建时,将自动获取并应用最新特性及一些改进,更新等.
 
-To update an existing project to a new version of `react-scripts`, [open the changelog](https://github.com/facebookincubator/create-react-app/blob/master/CHANGELOG.md), find the version you’re currently on (check `package.json` in this folder if you’re not sure), and apply the migration instructions for the newer versions.
+如要更新现有 `react-scripts` 的版本,请先浏览 [更新日志](https://github.com/facebookincubator/create-react-app/blob/master/CHANGELOG.md) ,找到你当前使用的版本,参照你对应的版本更新说明进行更新操作(如果你不清楚你所使用的版本,可以查看本地的 `package.json` 文件,找到版本信息).
 
-In most cases bumping the `react-scripts` version in `package.json` and running `npm install` in this folder should be enough, but it’s good to consult the [changelog](https://github.com/facebookincubator/create-react-app/blob/master/CHANGELOG.md) for potential breaking changes.
+大多数情况下,可以直接修改 `package.json` 文件中 `reac-scripts` 的版本再执行 `npm install` ,但是不建议这样做,可能会有一些潜在的风险,具体也可以查看 [更新日志](https://github.com/facebookincubator/create-react-app/blob/master/CHANGELOG.md) .
 
-We commit to keeping the breaking changes minimal so you can upgrade `react-scripts` painlessly.
+我们尽可能对项目不做重大调整,以便用户顺利的升级 `react-scripts`.
 
 ## 发送反馈
 
-We are always open to [your feedback](https://github.com/facebookincubator/create-react-app/issues).
+如有问题,可随时提交您的 [反馈](https://github.com/facebookincubator/create-react-app/issues) .
 
 ## 文件结构
 
-After creation, your project should look like this:
+当项目创建后,项目目录如下所示:
 
 ```
 my-app/
@@ -149,58 +149,59 @@ my-app/
     logo.svg
 ```
 
-For the project to build, **these files must exist with exact filenames**:
+在构建项目( `build` )时,下面的文件 **必须存在并保证文件名及路径与下面要求一致**
 
-* `public/index.html` is the page template;
-* `src/index.js` is the JavaScript entry point.
+* `public/index.html` 为模板页面;
+* `src/index.js` 为 JavaScript 入口.
 
-You can delete or rename the other files.
+对于其他文件,可以进行删除及重命名.
 
-You may create subdirectories inside `src`. For faster rebuilds, only files inside `src` are processed by Webpack.<br>
-You need to **put any JS and CSS files inside `src`**, otherwise Webpack won’t see them.
+也可以在 `src` 目录中创建子目录.为了保证最快的代码重构, Webpack 只会处理在 `src` 目录中的文件. <br>
+所以需要把 **所有的 JS 和 CSS 文件** 放在 `src` 目录中,否则 Webpack 不会识别处理.
 
-Only files inside `public` can be used from `public/index.html`.<br>
-Read instructions below for using assets from JavaScript and HTML.
+只有 `public` 目录下的文件才会被 `public/index.html` 引用. <br>
+请阅读下面有关使用 JavaScript 和 HTML 静态资源的说明.
 
-You can, however, create more top-level directories.<br>
-They will not be included in the production build so you can use them for things like documentation.
+当然也可以创建多个与 `public` 同级的顶级目录. <br>
+但这些目录不会包含在构建的项目中,我们可以使用这些目录存放项目说明文档.
+
 
 ## script配置信息
 
-In the project directory, you can run:
+在项目目录中,可以运行以下命令:
 
 ### `npm start`
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+在开发模式 (development mode) 下运行应用.<br>
+在浏览器中访问 [http://localhost:3000](http://localhost:3000) ,可以查看页面.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+如果代码有修改,将自动重新加载页面.<br>
+构建过程中,出现的错误信息和 lint 警告信息会显示在控制台中.
 
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](#running-tests) for more information.
+在交互模式下运行测试监测 (test wathcer) .<br>
+更多信息,请参阅 [运行测试 TEST](#运行测试-test) .
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+在构建 (build) 模式下,会在 `build` 文件目录中生成用以生产环境的应用.<br>
+build 模式将会合理的将 react 项目打包,并进行足够的优化,以保证在生产环境中获得最佳的性能.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+build 模式会尽可能的压缩打包文件,并在打包的文件名中加入文件内容的 hash.<br>
+到这里,应用程序已经可以进行部署了.
 
-See the section about [deployment](#deployment) for more information.
+查看更多关于 [部署](#部署) 的信息.
 
 ### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+注意: 该命令为单向操作,即 **只能运行一次** ` eject` ,一旦运行就无法撤回
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+如果对于构建工具和配置项不满意,可以随时运行 `eject` 命令.这个命令将会从项目中移除单个构建的依赖项.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+取而代之的是,所有的配置文件和项目依赖(Webpack, Babel, ESLint 等)都会被导入到我们的项目中,这样我们就可以完全自主进行配置了.此时除了 `eject` 命令,其余的命令依然可用.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+其实 `eject` 没有必要去使用,对于中小型应用来说,默认的配置项已经足够好用了,提供此功能是为了方便在一些特定的情况下进行自定义使用.
 
 ## 浏览器支持
 
@@ -684,7 +685,7 @@ Please be advised that this is also a custom feature of Webpack.
 **It is not required for React** but many people enjoy it (and React Native uses a similar mechanism for images).<br>
 An alternative way of handling static assets is described in the next section.
 
-## public-文件夹的使用
+## public 文件夹的使用
 
 >Note: this feature is available with `react-scripts@0.5.0` and higher.
 
@@ -2388,7 +2389,7 @@ NODE_PATH | :white_check_mark: |  :white_check_mark: | Same as [`NODE_PATH` in N
 
 ## 问题排查
 
-### `npm start` doesn’t detect changes
+### `npm start` 后检测不到变化
 
 When you save a file while `npm start` is running, the browser should refresh with the updated code.<br>
 If this doesn’t happen, try one of the following workarounds:
@@ -2402,7 +2403,7 @@ If this doesn’t happen, try one of the following workarounds:
 
 If none of these solutions help please leave a comment [in this thread](https://github.com/facebookincubator/create-react-app/issues/659).
 
-### `npm test` hangs on macOS Sierra
+### `npm test` 在 macOS Sierra 运行被挂起
 
 If you run `npm test` and the console gets stuck after printing `react-scripts test --env=jsdom` to the console there might be a problem with your [Watchman](https://facebook.github.io/watchman/) installation as described in [facebookincubator/create-react-app#713](https://github.com/facebookincubator/create-react-app/issues/713).
 
@@ -2426,7 +2427,7 @@ If this still doesn’t help, try running `launchctl unload -F ~/Library/LaunchA
 
 There are also reports that *uninstalling* Watchman fixes the issue. So if nothing else helps, remove it from your system and try again.
 
-### `npm run build` exits too early
+### `npm run build` 提前退出
 
 It is reported that `npm run build` can fail on machines with limited memory and no swap space, which is common in cloud environments. Even with small projects this command can increase RAM usage in your system by hundreds of megabytes, so if you have less than 1 GB of available memory your build is likely to fail with the following message:
 
@@ -2434,12 +2435,12 @@ It is reported that `npm run build` can fail on machines with limited memory and
 
 If you are completely sure that you didn't terminate the process, consider [adding some swap space](https://www.digitalocean.com/community/tutorials/how-to-add-swap-on-ubuntu-14-04) to the machine you’re building on, or build the project locally.
 
-### `npm run build` fails on Heroku
+### `npm run build` 在 Heroku 执行失败
 
 This may be a problem with case sensitive filenames.
 Please refer to [this section](#resolving-heroku-deployment-errors).
 
-### Moment.js locales are missing
+### Moment.js 缺少语言支持
 
 If you use a [Moment.js](https://momentjs.com/), you might notice that only the English locale is available by default. This is because the locale files are large, and you probably only need a subset of [all the locales provided by Moment.js](https://momentjs.com/#multiple-locale-support).
 
