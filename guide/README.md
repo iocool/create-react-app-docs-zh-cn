@@ -205,74 +205,75 @@ build 模式会尽可能的压缩打包文件,并在打包的文件名中加入�
 
 ## 浏览器支持
 
-By default, the generated project uses the latest version of React.
+默认情况下,生成的项目使用最新版本的 React.
 
-You can refer [to the React documentation](https://reactjs.org/docs/react-dom.html#browser-support) for more information about supported browsers.
+更多有关支持的浏览器信息,请参阅 [React文档](https://reactjs.org/docs/react-dom.html#browser-support)
 
 ## 支持的语法特点及 Polyfill
 
-This project supports a superset of the latest JavaScript standard.<br>
-In addition to [ES6](https://github.com/lukehoban/es6features) syntax features, it also supports:
+支持最新的 JavaScript 标准的超集. <br>
+除了 [ES6](https://github.com/lukehoban/es6features) 语法功能外,还支持:
 
-* [Exponentiation Operator](https://github.com/rwaldron/exponentiation-operator) (ES2016).
+* [指数运算符](https://github.com/rwaldron/exponentiation-operator) (ES2016).
 * [Async/await](https://github.com/tc39/ecmascript-asyncawait) (ES2017).
-* [Object Rest/Spread Properties](https://github.com/sebmarkbage/ecmascript-rest-spread) (stage 3 proposal).
-* [Dynamic import()](https://github.com/tc39/proposal-dynamic-import) (stage 3 proposal)
-* [Class Fields and Static Properties](https://github.com/tc39/proposal-class-public-fields) (part of stage 3 proposal).
-* [JSX](https://facebook.github.io/react/docs/introducing-jsx.html) and [Flow](https://flowtype.org/) syntax.
+* [Object Rest/Spread Properties](https://github.com/sebmarkbage/ecmascript-rest-spread) (第 3 阶段提案).
+* [Dynamic import()](https://github.com/tc39/proposal-dynamic-import) (第 3 阶段提案)
+* [Class Fields and Static Properties](https://github.com/tc39/proposal-class-public-fields) (第 3 阶段提案的一部分).
+* [JSX](https://facebook.github.io/react/docs/introducing-jsx.html) 和 [Flow](https://flowtype.org/) 语法.
 
-Learn more about [different proposal stages](https://babeljs.io/docs/plugins/#presets-stage-x-experimental-presets-).
+想要了解更多信息,可以查看[这里](https://babeljs.io/docs/plugins/#presets-stage-x-experimental-presets-).
 
-While we recommend using experimental proposals with some caution, Facebook heavily uses these features in the product code, so we intend to provide [codemods](https://medium.com/@cpojer/effective-javascript-codemods-5a6686bb46fb) if any of these proposals change in the future.
+我们建议谨慎使用这些实验性特型,但 Facebook 在产品代码中已较多使用这些新特性,如果这些提案中的特性以后有所变化,我们也会提供 [codemods](https://medium.com/@cpojer/effective-javascript-codemods-5a6686bb46fb).
 
-Note that **the project only includes a few ES6 [polyfills](https://en.wikipedia.org/wiki/Polyfill)**:
+请注意,项目中 **仅包含 ES6 的少量 [polyfills](https://en.wikipedia.org/wiki/Polyfill)** .
 
-* [`Object.assign()`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/assign) via [`object-assign`](https://github.com/sindresorhus/object-assign).
-* [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) via [`promise`](https://github.com/then/promise).
-* [`fetch()`](https://developer.mozilla.org/en/docs/Web/API/Fetch_API) via [`whatwg-fetch`](https://github.com/github/fetch).
 
-If you use any other ES6+ features that need **runtime support** (such as `Array.from()` or `Symbol`), make sure you are including the appropriate polyfills manually, or that the browsers you are targeting already support them.
+* [`Object.assign()`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/assign) 使用 [`object-assign`](https://github.com/sindresorhus/object-assign).
+* [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) 使用 [`promise`](https://github.com/then/promise).
+* [`fetch()`](https://developer.mozilla.org/en/docs/Web/API/Fetch_API) 使用 [`whatwg-fetch`](https://github.com/github/fetch).
 
-Also note that using some newer syntax features like `for...of` or `[...nonArrayValue]` causes Babel to emit code that depends on ES6 runtime features and might not work without a polyfill. When in doubt, use [Babel REPL](https://babeljs.io/repl/) to see what any specific syntax compiles down to.
+如果需要其他 **运行时支持** 的 ES6+ 功能(如 `Array.from()` 或 `Symbol`) ,需要自行手动添加相应的 polyfills ,或者项目运行目标浏览器已经支持这些特性.
+
+另外还需要注意的是,使用较新的语法功能(如 `for...of` 或 `[...nonArrayValue]` ) 导致 Babel 生成依赖于 ES6 运行时的功能代码,如果不添加 polyfills ,代码运行可能会出错.如有疑问,可以使用 [Babel REPL](https://babeljs.io/repl/) 查看所有的特定的语法编译内容.
 
 ## 编辑器中的语法高亮
 
-To configure the syntax highlighting in your favorite text editor, head to the [relevant Babel documentation page](https://babeljs.io/docs/editors) and follow the instructions. Some of the most popular editors are covered.
+如需要在编辑器中配置语法高亮,请查看 [有关 Babel 的文档](https://babeljs.io/docs/editors) ,并按照文档说明进行操作配置.
 
 ## 编辑器中 Lint 信息显示
 
->Note: this feature is available with `react-scripts@0.2.0` and higher.<br>
->It also only works with npm 3 or higher.
+>注意: 此功能在 `react-scripts@0.2.0` 或更高版本中可用.<br>
+>npm 版本在 3 或更高版本.
 
-Some editors, including Sublime Text, Atom, and Visual Studio Code, provide plugins for ESLint.
+一些编辑器,包括 Sublime Text, Atom, 和 Visual Studio Code,都提供了 ESLint 插件.
 
-They are not required for linting. You should see the linter output right in your terminal as well as the browser console. However, if you prefer the lint results to appear right in your editor, there are some extra steps you can do.
+编辑器的 Lint (语法检查)插件并不是必须的.我们同样可以在终端或浏览器控制台中,看到 lint 信息.如果希望在编辑器中就可以显示 lint 信息,则需要进行相应的安装配置等.
 
-You would need to install an ESLint plugin for your editor first. Then, add a file called `.eslintrc` to the project root:
+首先我们需要在在编辑器中安装 ESLint 插件.然后在项目的根目录下,创建一个名为 `.eslintrc` 的文件,文件内容如下:
 
-```js
+```json
 {
   "extends": "react-app"
 }
 ```
 
-Now your editor should report the linting warnings.
+此时,编辑器中应该会显示 lint 警告信息.
 
-Note that even if you edit your `.eslintrc` file further, these changes will **only affect the editor integration**. They won’t affect the terminal and in-browser lint output. This is because Create React App intentionally provides a minimal set of rules that find common mistakes.
+请注意,即使进一步配置 `.eslintrc` 文件,这些修改也 **只会影响编辑器集成** ,不会对终端和浏览器中的 lint 信息显示产生影响,因为 Create React App 本身提供了一些常见的错误检测.
 
-If you want to enforce a coding style for your project, consider using [Prettier](https://github.com/jlongster/prettier) instead of ESLint style rules.
+如果想在项目中执行代码格式化操作,可以考虑使用 [Prettier](https://github.com/jlongster/prettier) 来替代 ESLint.
 
 ## 编辑器中进行调试
 
-**This feature is currently only supported by [Visual Studio Code](https://code.visualstudio.com) and [WebStorm](https://www.jetbrains.com/webstorm/).**
+**目前只有 [Visual Studio Code](https://code.visualstudio.com) 和 [WebStorm](https://www.jetbrains.com/webstorm/) 支持该功能.**
 
-Visual Studio Code and WebStorm support debugging out of the box with Create React App. This enables you as a developer to write and debug your React code without leaving the editor, and most importantly it enables you to have a continuous development workflow, where context switching is minimal, as you don’t have to switch between tools.
+Visual Studio Code 和 WebStorm 支持开箱即用,可直接调试 Create React App 应用.这使得作为开发者而言,直接在编辑器中就可以进行代码的编写及调试.最重要的是,能够拥有连续的开发工作流,使得在开发过程中,不必在多个工具窗口之间来回切换.
 
 ### Visual Studio Code
 
-You would need to have the latest version of [VS Code](https://code.visualstudio.com) and VS Code [Chrome Debugger Extension](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome) installed.
+需要安装最新版本的 [VS Code](https://code.visualstudio.com) 和 VS Code 的扩展 [Chrome Debugger Extension](https://marketplace.visualstudio.com/items?itemName=msjsdiag.debugger-for-chrome)
 
-Then add the block below to your `launch.json` file and put it inside the `.vscode` folder in your app’s root directory.
+然后将以下代码块添加到 `launch.json` 文件中,并将该文件放在应用根目录中的 `.vscode` 文件夹中.
 
 ```json
 {
@@ -289,23 +290,26 @@ Then add the block below to your `launch.json` file and put it inside the `.vsco
   }]
 }
 ```
->Note: the URL may be different if you've made adjustments via the [HOST or PORT environment variables](#advanced-configuration).
+>注意: 如果通过 [HOST 或 PORT 环境变量](#高级配置) 进行了调整,则 url 需要修改.
 
-Start your app by running `npm start`, and start debugging in VS Code by pressing `F5` or by clicking the green debug icon. You can now write code, set breakpoints, make changes to the code, and debug your newly modified code—all from your editor.
+通过运行 `npm start` 来启动应用,在 VS Code 中,使用 `F5` 快捷键或者点击绿色的调试按钮进行调试.之后,可以继续进行代码编写,设置断点,修改代码等操作,然后可以继续通过编辑器调试编辑后的代码.
 
-Having problems with VS Code Debugging? Please see their [troubleshooting guide](https://github.com/Microsoft/vscode-chrome-debug/blob/master/README.md#troubleshooting).
+在 VS Code 调试过程中出现问题,可参阅 [故障排除指南](https://github.com/Microsoft/vscode-chrome-debug/blob/master/README.md#troubleshooting)
 
 ### WebStorm
 
-You would need to have [WebStorm](https://www.jetbrains.com/webstorm/) and [JetBrains IDE Support](https://chrome.google.com/webstore/detail/jetbrains-ide-support/hmhgeddbohgjknpmjagkdomcpobmllji) Chrome extension installed.
+需要安装 [WebStorm](https://www.jetbrains.com/webstorm/) 和 Chrome 扩展程序 [JetBrains IDE Support](https://chrome.google.com/webstore/detail/jetbrains-ide-support/hmhgeddbohgjknpmjagkdomcpobmllji)
 
-In the WebStorm menu `Run` select `Edit Configurations...`. Then click `+` and select `JavaScript Debug`. Paste `http://localhost:3000` into the URL field and save the configuration.
+选择 WebStorm 菜单栏 `Run` 中的 `Edit Configurations...`,然后点击 `+` 并且选择 `JavaScript Debug` .然后将 `http://localhost:3000` 粘贴在 URL 字段栏中,并保存配置.
 
->Note: the URL may be different if you've made adjustments via the [HOST or PORT environment variables](#advanced-configuration).
+>注意: 如果通过 [HOST 或 PORT 环境变量](#高级配置) 进行了调整,则 url 需要修改.
 
-Start your app by running `npm start`, then press `^D` on macOS or `F9` on Windows and Linux or click the green debug icon to start debugging in WebStorm.
+通过运行 `npm start` 来启动应用,在 macOS 系统下,通过 `^D` 快捷键或者点击绿色的调试图标按钮,可以在 WebStorm 中开启调试功能.在 Windows 系统下,通过 `F9` 快捷键或者点击绿色的调试图标按钮,可以开启调试功能.
 
-The same way you can debug your application in IntelliJ IDEA Ultimate, PhpStorm, PyCharm Pro, and RubyMine. 
+
+当然,在以下这些开发工具中,调试方式与 WebStorm 中相同:
+
+IntelliJ IDEA Ultimate, PhpStorm, PyCharm Pro, 以及 RubyMine
 
 ## 代码自动格式化
 
