@@ -247,7 +247,7 @@ build 模式会尽可能的压缩打包文件,并在打包的文件名中加入�
 
 一些编辑器,包括 Sublime Text, Atom, 和 Visual Studio Code,都提供了 ESLint 插件.
 
-编辑器的 Lint (语法检查)插件并不是必须的.我们同样可以在终端或浏览器控制台中,看到 lint 信息.如果希望在编辑器中就可以显示 lint 信息,则需要进行相应的安装配置等.
+编辑器的 Lint (代码风格检查)插件并不是必须的.我们同样可以在终端或浏览器控制台中,看到 lint 信息.如果希望在编辑器中就可以显示 lint 信息,则需要进行相应的安装配置等.
 
 首先我们需要在在编辑器中安装 ESLint 插件.然后在项目的根目录下,创建一个名为 `.eslintrc` 的文件,文件内容如下:
 
@@ -313,27 +313,27 @@ IntelliJ IDEA Ultimate, PhpStorm, PyCharm Pro, 以及 RubyMine
 
 ## 代码自动格式化
 
-Prettier is an opinionated code formatter with support for JavaScript, CSS and JSON. With Prettier you can format the code you write automatically to ensure a code style within your project. See the [Prettier's GitHub page](https://github.com/prettier/prettier) for more information, and look at this [page to see it in action](https://prettier.github.io/prettier/).
+Prettier 是一个代码格式化 (code formatter) 工具,支持 JavaScript, CSS 以及 JSON 等格式.它可以自动格式化代码,保证项目中代码格式统一.有关详细信息,请参阅 [Prettier 的 GitHub 页面](https://github.com/prettier/prettier) , 查看 [演示页面](https://prettier.github.io/prettier/).
 
-To format our code whenever we make a commit in git, we need to install the following dependencies:
+如果我们想在 git 提交代码时自动进行格式化,可以安装下面的依赖项:
 
 ```sh
 npm install --save husky lint-staged prettier
 ```
 
-Alternatively you may use `yarn`:
+或者使用 `yarn`:
 
 ```sh
 yarn add husky lint-staged prettier
 ```
 
-* `husky` makes it easy to use githooks as if they are npm scripts.
-* `lint-staged` allows us to run scripts on staged files in git. See this [blog post about lint-staged to learn more about it](https://medium.com/@okonetchnikov/make-linting-great-again-f3890e1ad6b8).
-* `prettier` is the JavaScript formatter we will run before commits.
+* `husky` 使得使用 githooks 如同使用 npm scripts 一样简单.
+* `lint-staged` 允许在使用 git 提交代码时,可以在处于 staged 状态(即待提交区)里的文件运行脚本. 查看这篇 [博客文章](https://medium.com/@okonetchnikov/make-linting-great-again-f3890e1ad6b8) ,可以了解更多关于 lint-staged 的信息.
+* `prettier` 将在我们提交代码之前运行 JavaScript 脚本来格式化代码.
 
-Now we can make sure every file is formatted correctly by adding a few lines to the `package.json` in the project root.
+现在,我们可以修改项目根目录下的 `package.json` 文件,在该文件中添加以下代码,确保每个文件都可以被格式化处理.
 
-Add the following line to `scripts` section:
+将下面代码添加到 `scripts` 部分:
 
 ```diff
   "scripts": {
@@ -342,7 +342,7 @@ Add the following line to `scripts` section:
     "build": "react-scripts build",
 ```
 
-Next we add a 'lint-staged' field to the `package.json`, for example:
+接下来在 `package.json` 文件中添加 `lint-staged` 字段:
 
 ```diff
   "dependencies": {
@@ -357,35 +357,35 @@ Next we add a 'lint-staged' field to the `package.json`, for example:
   "scripts": {
 ```
 
-Now, whenever you make a commit, Prettier will format the changed files automatically. You can also run `./node_modules/.bin/prettier --single-quote --write "src/**/*.{js,jsx,json,css}"` to format your entire project for the first time.
+现在,只要进行代码提交, Prettier 就会自动格式化被修改的文件.另外,首次使用的时候,可以运行 `./node_modules/.bin/prettier --single-quote --write "src/**/*.{js,jsx,json,css}"` 对整个项目代码进行格式化.
 
-Next you might want to integrate Prettier in your favorite editor. Read the section on [Editor Integration](https://prettier.io/docs/en/editors.html) on the Prettier GitHub page.
+当然如果你想要将 Prettier 集成到编辑器中,可以参照 Prettier 的 GitHub 页面上 [编辑器集成](https://prettier.io/docs/en/editors.html) 部分了解.
 
 ## 修改页面标题
 
-You can find the source HTML file in the `public` folder of the generated project. You may edit the `<title>` tag in it to change the title from “React App” to anything else.
+你可以在生成的项目中的 `public` 文件夹中,找到 HTML 文件,编辑该文件中的 `<title>` 标签,将标签内容中的 "React App" 修改为你所需要的标题.
 
-Note that normally you wouldn’t edit files in the `public` folder very often. For example, [adding a stylesheet](#adding-a-stylesheet) is done without touching the HTML.
+请注意,通常情况下 `public` 文件夹中的文件不用编辑的.例如你要[添加一个样式](#样式添加) ,是不需要操作 HTML 文件.
 
-If you need to dynamically update the page title based on the content, you can use the browser [`document.title`](https://developer.mozilla.org/en-US/docs/Web/API/Document/title) API. For more complex scenarios when you want to change the title from React components, you can use [React Helmet](https://github.com/nfl/react-helmet), a third party library.
+如果需要动态去修改页面的标题, 可以使用 [`document.title`](https://developer.mozilla.org/en-US/docs/Web/API/Document/title) 来修改.如果需要在复杂的应用场景下,通过 React 组件修改标题时,可以借助如 [React Helmet](https://github.com/nfl/react-helmet) 第三方插件来实现.
 
-If you use a custom server for your app in production and want to modify the title before it gets sent to the browser, you can follow advice in [this section](#generating-dynamic-meta-tags-on-the-server). Alternatively, you can pre-build each page as a static HTML file which then loads the JavaScript bundle, which is covered [here](#pre-rendering-into-static-html-files).
+如果你在生产环境中使用自定义服务器,希望在用户浏览器接收到页面数据之前,就可以修改页面标题,可以参照 [这里](#在服务器上生成动态-meta-标签) ,也可以使用页面预加载,即当 JavaScript 加载后,页面会被构建为静态 HTML ,访问 [这里](#预加载静态-html-文件) 查看相关介绍.
 
 ## 安装依赖项
 
-The generated project includes React and ReactDOM as dependencies. It also includes a set of scripts used by Create React App as a development dependency. You may install other dependencies (for example, React Router) with `npm`:
+最终生成的项目包括 React 和 ReactDOM 作为依赖项.在开发环境下,还会包括 Create React App 的其他一些依赖项.可以使用 `npm` 命令来安装其他的依赖项,例如 React Router,则执行:
 
 ```sh
 npm install --save react-router
 ```
 
-Alternatively you may use `yarn`:
+当然也可以使用 `yarn`:
 
 ```sh
 yarn add react-router
 ```
 
-This works for any library, not just `react-router`.
+不仅仅是 `react-router` , 其他任何库都可以使用该方式安装.
 
 ## 组件引入
 
