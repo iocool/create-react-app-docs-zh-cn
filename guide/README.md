@@ -389,10 +389,10 @@ yarn add react-router
 
 ## 组件引入
 
-This project setup supports ES6 modules thanks to Babel.<br>
-While you can still use `require()` and `module.exports`, we encourage you to use [`import` and `export`](http://exploringjs.com/es6/ch_modules.html) instead.
+由于使用了 Babel ,所以项目支持 ES6
+虽然你仍然可以使用 `require()` 和 `module.exports`,但我们鼓励使用 [`import` 和 `export`](http://exploringjs.com/es6/ch_modules.html) 来替代他们.
 
-For example:
+示例:
 
 ### `Button.js`
 
@@ -405,7 +405,7 @@ class Button extends Component {
   }
 }
 
-export default Button; // Don’t forget to use export default!
+export default Button; // 这里不要忘记使用 export default !
 ```
 
 ### `DangerButton.js`
@@ -413,7 +413,7 @@ export default Button; // Don’t forget to use export default!
 
 ```js
 import React, { Component } from 'react';
-import Button from './Button'; // Import a component from another file
+import Button from './Button'; // 从另一个文件 Import 组件 
 
 class DangerButton extends Component {
   render() {
@@ -424,13 +424,13 @@ class DangerButton extends Component {
 export default DangerButton;
 ```
 
-Be aware of the [difference between default and named exports](http://stackoverflow.com/questions/36795819/react-native-es-6-when-should-i-use-curly-braces-for-import/36796281#36796281). It is a common source of mistakes.
+请注意 [默认导出和命名导出(`default exports`, `named exports`)的区别](http://stackoverflow.com/questions/36795819/react-native-es-6-when-should-i-use-curly-braces-for-import/36796281#36796281). 这会是一个常见的错误原因.
 
-We suggest that you stick to using default imports and exports when a module only exports a single thing (for example, a component). That’s what you get when you use `export default Button` and `import Button from './Button'`.
+我们建议在模块仅导出单个内容(如组件)时,使用默认导入和导出( `imports` 和 `exports` ).如 `export default Button` 和 `import Button from './Button'`.
 
-Named exports are useful for utility modules that export several functions. A module may have at most one default export and as many named exports as you like.
+命名导出( `named exports` )在导出多个函数模块时很有用,一个模块( `module` )最多可以有一个默认导出( `default exports` )和多个命名导出( `named exports` ).
 
-Learn more about ES6 modules:
+了解更多有关 ES6 模块的信息,请参照:
 
 * [When to use the curly braces?](http://stackoverflow.com/questions/36795819/react-native-es-6-when-should-i-use-curly-braces-for-import/36796281#36796281)
 * [Exploring ES6: Modules](http://exploringjs.com/es6/ch_modules.html)
@@ -438,11 +438,11 @@ Learn more about ES6 modules:
 
 ## 代码拆分
 
-Instead of downloading the entire app before users can use it, code splitting allows you to split your code into small chunks which you can then load on demand.
+为避免用户在使用应用之前下载整个应用程序,将代码拆分成较小的代码块,实现代码的按需加载.
 
-This project setup supports code splitting via [dynamic `import()`](http://2ality.com/2017/01/import-operator.html#loading-code-on-demand). Its [proposal](https://github.com/tc39/proposal-dynamic-import) is in stage 3. The `import()` function-like form takes the module name as an argument and returns a [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) which always resolves to the namespace object of the module.
+该功能是通过 [动态 `import()`](http://2ality.com/2017/01/import-operator.html#loading-code-on-demand) 来实现的.它的 [建议](https://github.com/tc39/proposal-dynamic-import) 在第三部分.The `import()` function-like form takes the module name as an argument and returns a [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) which always resolves to the namespace object of the module.
 
-Here is an example:
+示例:
 
 ### `moduleA.js`
 
@@ -460,17 +460,17 @@ class App extends Component {
   handleClick = () => {
     import('./moduleA')
       .then(({ moduleA }) => {
-        // Use moduleA
+        // 使用 moduleA
       })
       .catch(err => {
-        // Handle failure
+        // 挂起 failure
       });
   };
 
   render() {
     return (
       <div>
-        <button onClick={this.handleClick}>Load</button>
+        <button onClick={this.handleClick}>加载</button>
       </div>
     );
   }
@@ -479,15 +479,15 @@ class App extends Component {
 export default App;
 ```
 
-This will make `moduleA.js` and all its unique dependencies as a separate chunk that only loads after the user clicks the 'Load' button.
+这将使的 `moduleA.js` 以及它所有的依赖项作为一个单独的模块,仅在用户点击 `加载` 按钮后才会加载.
 
-You can also use it with `async` / `await` syntax if you prefer it.
+也可以同 `async` / `await` 一起使用.
 
-### With React Router
+### 与 React 路由(Router) 一起使用
 
-If you are using React Router check out [this tutorial](http://serverless-stack.com/chapters/code-splitting-in-create-react-app.html) on how to use code splitting with it. You can find the companion GitHub repository [here](https://github.com/AnomalyInnovations/serverless-stack-demo-client/tree/code-splitting-in-create-react-app).
+如果你使用的是 React 路由,请参照本 [教程](http://serverless-stack.com/chapters/code-splitting-in-create-react-app.html), 了解如何进行代码拆分,你也可以在 [此处](https://github.com/AnomalyInnovations/serverless-stack-demo-client/tree/code-splitting-in-create-react-app) 找到对应的 GitHub 示例.
 
-Also check out the [Code Splitting](https://reactjs.org/docs/code-splitting.html) section in React documentation.
+另外也可以参照 React 文档中的 [Code Splitting](https://reactjs.org/docs/code-splitting.html) 部分.
 
 ## 样式添加
 
