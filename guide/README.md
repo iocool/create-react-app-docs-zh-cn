@@ -491,7 +491,7 @@ export default App;
 
 ## 样式添加
 
-This project setup uses [Webpack](https://webpack.js.org/) for handling all assets. Webpack offers a custom way of “extending” the concept of `import` beyond JavaScript. To express that a JavaScript file depends on a CSS file, you need to **import the CSS from the JavaScript file**:
+项目使用 [Webpack](https://webpack.js.org/) 来处理所有的资源. Webpack 提供了一种 JavaScript 的扩展方式,要表示 JavaScript 文件依赖于 CSS 文件, 需要 **在 JavaScript 文件中 `import` CSS 文件**.
 
 ### `Button.css`
 
@@ -505,27 +505,27 @@ This project setup uses [Webpack](https://webpack.js.org/) for handling all asse
 
 ```js
 import React, { Component } from 'react';
-import './Button.css'; // Tell Webpack that Button.js uses these styles
+import './Button.css'; // 告诉 Webpack 当前 Button.js 使用该样式
 
 class Button extends Component {
   render() {
-    // You can use them as regular CSS styles
+    // 可以像使用普通 CSS 样式那样使用
     return <div className="Button" />;
   }
 }
 ```
 
-**This is not required for React** but many people find this feature convenient. You can read about the benefits of this approach [here](https://medium.com/seek-blog/block-element-modifying-your-javascript-components-d7f99fcab52b). However you should be aware that this makes your code less portable to other build tools and environments than Webpack.
+当然 **这些不是 React 必须的**,不过这个功能真的很方便,查看 [这里](https://medium.com/seek-blog/block-element-modifying-your-javascript-components-d7f99fcab52b) 可以了解到这种方法使用的好处.不过这样用,相比 Webpack 方式,移植到其他构建工具或平台会麻烦一点.
 
-In development, expressing dependencies this way allows your styles to be reloaded on the fly as you edit them. In production, all CSS files will be concatenated into a single minified `.css` file in the build output.
+在开发环境,使用这种依赖引用方式,可以在编辑样式文件时动态的重新加载编辑后的样式.在生产环境,所有的 CSS 文件,都会被压缩并关联到一个单独的 `.CSS` 文件.
 
-If you are concerned about using Webpack-specific semantics, you can put all your CSS right into `src/index.css`. It would still be imported from `src/index.js`, but you could always remove that import if you later migrate to a different build tool.
+如果担心会使用到 Webpack-specific 语义,可以将所有的 CSS 正确引入到 `src/index.css` 文件中,这样仍然会在 `src/index.js` 文件中导入,但如果需要把项目迁移到其他构建工具中,也可以直接移除导入. 
 
 ## CSS处理
 
-This project setup minifies your CSS and adds vendor prefixes to it automatically through [Autoprefixer](https://github.com/postcss/autoprefixer) so you don’t need to worry about it.
+项目中 CSS 文件最终会被压缩,并通过 [Autoprefixer](https://github.com/postcss/autoprefixer) 自动添加不同浏览器兼容的前缀.
 
-For example, this:
+例如:
 
 ```css
 .App {
@@ -535,7 +535,7 @@ For example, this:
 }
 ```
 
-becomes this:
+处理之后:
 
 ```css
 .App {
@@ -552,27 +552,27 @@ becomes this:
 }
 ```
 
-If you need to disable autoprefixing for some reason, [follow this section](https://github.com/postcss/autoprefixer#disabling).
+如果处于一些原因需要禁用该功能,可以参照 [这里](https://github.com/postcss/autoprefixer#disabling) 操作.
 
 ## 添加 CSS 预处理器(如 Sass, Less 等)
 
-Generally, we recommend that you don’t reuse the same CSS classes across different components. For example, instead of using a `.Button` CSS class in `<AcceptButton>` and `<RejectButton>` components, we recommend creating a `<Button>` component with its own `.Button` styles, that both `<AcceptButton>` and `<RejectButton>` can render (but [not inherit](https://facebook.github.io/react/docs/composition-vs-inheritance.html)).
+通常情况下,建议不要在不同的组件中使用相同的 CSS 类名.例如,在 `<AcceptButton>` 和 `<RejectButton>` 组件在,不建议使用 `.Button` 这样的 CSS 类名,我们建议,创建一个 `<Button>` 组件,并使用它自己私有的 `.Button` 样式,然后可以在 `<AcceptButton>` 和 `<RejectButton>` 中进行渲染(但 [不能继承](https://facebook.github.io/react/docs/composition-vs-inheritance.html) ).
 
-Following this rule often makes CSS preprocessors less useful, as features like mixins and nesting are replaced by component composition. You can, however, integrate a CSS preprocessor if you find it valuable. In this walkthrough, we will be using Sass, but you can also use Less, or another alternative.
+遵循这样的规则可能会使 CSS 使用起来不那么灵活,因为混合以及嵌套功能会被组件自身样式所替代,当然如果你不是很介意,也可以使用一些 CSS 预处理工具,在这个例子里,我们使用 Sass ,当然你也可以使用 Less 或者其他预处理工具. 
 
-First, let’s install the command-line interface for Sass:
+首先,使用下面命令安装 Sass:
 
 ```sh
 npm install --save node-sass-chokidar
 ```
 
-Alternatively you may use `yarn`:
+当然也可以使用 `yarn`:
 
 ```sh
 yarn add node-sass-chokidar
 ```
 
-Then in `package.json`, add the following lines to `scripts`:
+然后在 `packpage.json` 文件中,添加一下 `script`:
 
 ```diff
    "scripts": {
@@ -583,40 +583,41 @@ Then in `package.json`, add the following lines to `scripts`:
      "test": "react-scripts test --env=jsdom",
 ```
 
->Note: To use a different preprocessor, replace `build-css` and `watch-css` commands according to your preprocessor’s documentation.
+>注意: 要使用其他 CSS 预处理工具,请根据相关文档替换 `build-css` 和 `watch-css` 命令.
 
-Now you can rename `src/App.css` to `src/App.scss` and run `npm run watch-css`. The watcher will find every Sass file in `src` subdirectories, and create a corresponding CSS file next to it, in our case overwriting `src/App.css`. Since `src/App.js` still imports `src/App.css`, the styles become a part of your application. You can now edit `src/App.scss`, and `src/App.css` will be regenerated.
+此时,你可以重命名 `src/App.css` 为 `src/App.scss` , 运行命令 `npm run watch-css` ,程序将自动监测根目录下的每一个 Sass 文件,并且在对应的 Sass 文件位置创建相应的 CSS 文件.在我们当前的示例中,将覆盖 `src/App.css` .由于 `src/App.js` 中依旧 imports 的是 `src/App.css` ,因此该 CSS 文件仍是项目的一部分,现在尝试编辑 `src/App.scss` ,对应的 `src/App.css` 将重新生成.
 
-To share variables between Sass files, you can use Sass imports. For example, `src/App.scss` and other component style files could include `@import "./shared.scss";` with variable definitions.
+要在不同的 Sass 文件间共享变量,可以使用 Sass imports .例如, `src/App.scss` 可以使用其他组件的样式文件中,包含 `@import "./shared.scss"` 定义的变量.
 
-To enable importing files without using relative paths, you can add the  `--include-path` option to the command in `package.json`.
+如果在非相对路径下启用导入文件,需要在 `package.json` 文件中添加命令参数.
 
 ```
 "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
 "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
 ```
 
-This will allow you to do imports like
+可以这样使用:
 
 ```scss
-@import 'styles/_colors.scss'; // assuming a styles directory under src/
-@import 'nprogress/nprogress'; // importing a css file from the nprogress node module
+@import 'styles/_colors.scss'; // 假设在 src/ 下有 styles 这个文件夹
+@import 'nprogress/nprogress'; // 在 nprogress 目录下导入 css 文件
 ```
 
-At this point you might want to remove all CSS files from the source control, and add `src/**/*.css` to your `.gitignore` file. It is generally a good practice to keep the build products outside of the source control.
+此时你可能希望删除项目源目录中所有生成的 .CSS 文件,同时在 `.gitignore` 文件中添加 `src/**/*.css` 这样一条规则.因为通常我们都不会把构建的生产项目添加进源代码管理中.
 
-As a final step, you may find it convenient to run `watch-css` automatically with `npm start`, and run `build-css` as a part of `npm run build`. You can use the `&&` operator to execute two scripts sequentially. However, there is no cross-platform way to run two scripts in parallel, so we will install a package for this:
+最后,我们可能希望当我们运行 `npm start` 命令的时候,可以自动裕兴``运行 `watch-css` 命令,当我们运行 `npm build` 时,自动运行 `build-css` 命令.我们可以使用 `&&` 运算符按照顺序执行这2个脚本,然而并没有跨平台的方式允许我们同时运行这2个脚本,因此我们还需要安装一个依赖包:
 
 ```sh
 npm install --save npm-run-all
 ```
 
-Alternatively you may use `yarn`:
+当然也可以使用 `yarn`:
 
 ```sh
 yarn add npm-run-all
 ```
 
+然后我们就可以在 `start` 和 `build` 脚本中添加与 CSS 预处理工具相关的命令
 Then we can change `start` and `build` scripts to include the CSS preprocessor commands:
 
 ```diff
@@ -634,19 +635,21 @@ Then we can change `start` and `build` scripts to include the CSS preprocessor c
    }
 ```
 
-Now running `npm start` and `npm run build` also builds Sass files.
+此时再运行 `npm start` 和 `npm build` 命令,也可以构建 sass 文件.
 
-**Why `node-sass-chokidar`?**
 
-`node-sass` has been reported as having the following issues:
+**为什么使用 `node-sass-chokidar`**
 
-- `node-sass --watch` has been reported to have *performance issues* in certain conditions when used in a virtual machine or with docker.
+`node-sass` 已被证实有以下问题:
 
-- Infinite styles compiling [#1939](https://github.com/facebookincubator/create-react-app/issues/1939)
+- `node-sass --watch` 在虚拟机或 docker 中使用时,在某些情况下会出现 *性能问题*.
 
-- `node-sass` has been reported as having issues with detecting new files in a directory [#1891](https://github.com/sass/node-sass/issues/1891)
 
- `node-sass-chokidar` is used here as it addresses these issues.
+- 样式无限编译问题 [#1939](https://github.com/facebookincubator/create-react-app/issues/1939)
+
+- `node-sass` 监测目录中新增文件的问题 [#1891](https://github.com/sass/node-sass/issues/1891)
+
+ 在示例中使用的 `node-sass-chokidar` 已经解决以上问题.
 
 ## 图像,字体和文件的添加
 
