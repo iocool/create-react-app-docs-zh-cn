@@ -713,7 +713,7 @@ Webpack 在 CSS 中找到所有相关的模块引用(从 `./` 开始),并路径�
 * 缺少文件会引起编译错误,而不会导致用户的 404 错误信息.
 * 最终打包文件名为文件的哈希值,因此不用担心会产生浏览器缓存的问题.
 
-但是,可以使用 **escape hatch**在系统模块之外添加静态资源.
+但是,可以使用 **escape hatch** 在系统模块之外添加静态资源.
 
 如果将文件放入 `public` 文件夹中, Webpack 将 **不会** 处理该文件.相反,该文件将会被复制到构建文件夹中.如果要引用 `public` 文件夹中的资源,需要使用一个名为 `PUBLIC_URL` 的变量.
 
@@ -757,80 +757,78 @@ render() {
 
 ## 全局变量的使用
 
-When you include a script in the HTML file that defines global variables and try to use one of these variables in the code, the linter will complain because it cannot see the definition of the variable.
+当你在 HTML 文件中定义一个全局变量,然后尝试在代码中使用这一变量时, linter 可能会产生一些问题,比如提示无法找到定义的变量.
 
-You can avoid this by reading the global variable explicitly from the `window` object, for example:
+所以,你可以将一些全局变量定义在 `window` 对象上,例如:
 
 ```js
 const $ = window.$;
 ```
 
-This makes it obvious you are using a global variable intentionally rather than because of a typo.
+这样就很明显的看出你是要使用全局变量.
 
-Alternatively, you can force the linter to ignore any line by adding `// eslint-disable-line` after it.
+或者,你可以通过在代码行后添加 `// eslint-disable-line` 来强制 linter 忽略改行.
 
 ## 添加 Bootstrap
 
-You don’t have to use [React Bootstrap](https://react-bootstrap.github.io) together with React but it is a popular library for integrating Bootstrap with React apps. If you need it, you can integrate it with Create React App by following these steps:
+你并不一定需要将 [React Bootstrap](https://react-bootstrap.github.io) 与 React 一起使用, 它集成了 Bootstrap 和 React .如果有需要,可以按照以下步骤,与 Create React App 集成:
 
-Install React Bootstrap and Bootstrap from npm. React Bootstrap does not include Bootstrap CSS so this needs to be installed as well:
+从 npm 安装 React Bootstrap 和 Bootstrap ,由于 React Bootstrap 不包含 Bootstrap CSS ,所以需要安装:
 
 ```sh
 npm install --save react-bootstrap bootstrap@3
 ```
 
-Alternatively you may use `yarn`:
+当然如果你使用 `yarn` :
 
 ```sh
 yarn add react-bootstrap bootstrap@3
 ```
 
-Import Bootstrap CSS and optionally Bootstrap theme CSS in the beginning of your ```src/index.js``` file:
+在 `src/index.js` 文件开头导入 Bootstrap CSS 和可选的 Bootstrap 主题 CSS :
 
 ```js
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
-// Put any other imports below so that CSS from your
-// components takes precedence over default styles.
+// 将你的 CSS 文件放置在下面
+// 组件的 CSS 优先级高于默认样式
 ```
 
-Import required React Bootstrap components within ```src/App.js``` file or your custom component files:
+在 `src/App.js` 文件或自定义组件文件中, import 所需要的 React Bootstrap 组件:
 
 ```js
 import { Navbar, Jumbotron, Button } from 'react-bootstrap';
 ```
 
-Now you are ready to use the imported React Bootstrap components within your component hierarchy defined in the render method. Here is an example [`App.js`](https://gist.githubusercontent.com/gaearon/85d8c067f6af1e56277c82d19fd4da7b/raw/6158dd991b67284e9fc8d70b9d973efe87659d72/App.js) redone using React Bootstrap.
+现在,你就可以在 render 方法中定义的组件中使用导入的 React Bootstrap 组件了,这里有一个示例: [`App.js`](https://gist.githubusercontent.com/gaearon/85d8c067f6af1e56277c82d19fd4da7b/raw/6158dd991b67284e9fc8d70b9d973efe87659d72/App.js)
 
 ### 使用自定义主题
 
-Sometimes you might need to tweak the visual styles of Bootstrap (or equivalent package).<br>
-We suggest the following approach:
+有时候可能需要调整 Bootstrap (或其他类似的库) 的默认样式. <br>
+我们建议采用以下方法:
 
-* Create a new package that depends on the package you wish to customize, e.g. Bootstrap.
-* Add the necessary build steps to tweak the theme, and publish your package on npm.
-* Install your own theme npm package as a dependency of your app.
+* 创建一个新的自定义包,依赖于你要调整的包,例如 Bootstrap .
+* 添加必要的构建操作,以调整主题样式,并将其发布到 npm 上.
+* 将你自己定义的 npm 主题包作为依赖项安装到你的应用中.
 
-Here is an example of adding a [customized Bootstrap](https://medium.com/@tacomanator/customizing-create-react-app-aa9ffb88165) that follows these steps.
+以下步骤是添加 [自定义 Bootstrap](https://medium.com/@tacomanator/customizing-create-react-app-aa9ffb88165) 的示例:
 
 ## 添加 Flow
 
-Flow is a static type checker that helps you write code with fewer bugs. Check out this [introduction to using static types in JavaScript](https://medium.com/@preethikasireddy/why-use-static-types-in-javascript-part-1-8382da1e0adb) if you are new to this concept.
+FLow 是一个静态类型检查工具,可以帮助我们在书写代码的过程中尽量减少错误.如果不是很了解这个概念,可以参阅 [introduction to using static types in JavaScript](https://medium.com/@preethikasireddy/why-use-static-types-in-javascript-part-1-8382da1e0adb)
+Create React App 已经整合了最新版的 [Flow](http://flowtype.org/) ,可以开箱即用.
 
-Recent versions of [Flow](http://flowtype.org/) work with Create React App projects out of the box.
+要在 Create React App 项目中添加 Flow ,有以下几步:
 
-To add Flow to a Create React App project, follow these steps:
+1. 运行 `npm install --save flow-bin` (或者 `yarn add flow-bin`).
+2. 添加 `"flow": "flow"` 到  `package.json` 文件中的 `scripts` 部分.
+3. 运行 `npm run flow init` (或 `yarn flow init` ) ,会自动在根目录下创建 [`.flowconfig` file](https://flowtype.org/docs/advanced-configuration.html) 文件.
+4. 添加 `// @flow` 到任意需要进行类型检查的文件中(例如, 在 `src/App.js` )
 
-1. Run `npm install --save flow-bin` (or `yarn add flow-bin`).
-2. Add `"flow": "flow"` to the `scripts` section of your `package.json`.
-3. Run `npm run flow init` (or `yarn flow init`) to create a [`.flowconfig` file](https://flowtype.org/docs/advanced-configuration.html) in the root directory.
-4. Add `// @flow` to any files you want to type check (for example, to `src/App.js`).
+现在,可以运行 `npm run flow` (或 `yarn flow` ) 以检查文件是否存在类型错误.
+你可以选择使用像 [Nuclide](https://nuclide.io/docs/languages/flow/) 这样的 IDE 来获得更好的集成开发体验.以后,我们计划把 Flow 更好的集成到 Create React App 中.
 
-Now you can run `npm run flow` (or `yarn flow`) to check the files for type errors.
-You can optionally use an IDE like [Nuclide](https://nuclide.io/docs/languages/flow/) for a better integrated experience.
-In the future we plan to integrate it into Create React App even more closely.
-
-To learn more about Flow, check out [its documentation](https://flowtype.org/).
+如要了解更多有关 Flow 的信息,请参阅 [Flow文档](https://flowtype.org/)
 
 ## 添加路由 Router
 
