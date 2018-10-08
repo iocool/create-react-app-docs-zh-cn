@@ -832,52 +832,46 @@ Create React App 已经整合了最新版的 [Flow](http://flowtype.org/) ,可�
 
 ## 添加路由 Router
 
-Create React App doesn't prescribe a specific routing solution, but [React Router](https://reacttraining.com/react-router/) is the most popular one.
+Create React App 并未规定特定的路由解决方案,但是 [React Router](https://reacttraining.com/react-router/) 是最好的解决方案之一.
 
-To add it, run:
+如要添加,请运行:
 
 ```sh
 npm install --save react-router-dom
 ```
 
-Alternatively you may use `yarn`:
+或者你可以使用 `yarn`:
 
 ```sh
 yarn add react-router-dom
 ```
 
-To try it, delete all the code in `src/App.js` and replace it with any of the examples on its website. The [Basic Example](https://reacttraining.com/react-router/web/example/basic) is a good place to get started.
+接下来要尝试 React Router ,请将 `src/App.js` 中的所有代码删除,然后替换为网站上的示例代码.这里是 [基本示例](https://reacttraining.com/react-router/web/example/basic).
 
-Note that [you may need to configure your production server to support client-side routing](#serving-apps-with-client-side-routing) before deploying your app.
+请注意,在部署应用之前, [需要在生产环境服务器配置以支持客户端路由](#使用客户端路由的服务端配置).
 
 ## 添加自定义环境变量
 
->Note: this feature is available with `react-scripts@0.2.3` and higher.
+>请注意:此功能仅在 `react-scripts@0.2.3` 或更高版本提供.
 
-Your project can consume variables declared in your environment as if they were declared locally in your JS files. By
-default you will have `NODE_ENV` defined for you, and any other environment variables starting with
-`REACT_APP_`.
+你的项目中可以使用环境变量,类似于 JS 文件中的本地声明变量.通常情况下,可以使用的环境变量有 `NODE_ENV` (默认已经定义),以及其他以 `REACT_APP_` 开头的环境变量.
 
-**The environment variables are embedded during the build time**. Since Create React App produces a static HTML/CSS/JS bundle, it can’t possibly read them at runtime. To read them at runtime, you would need to load HTML into memory on the server and replace placeholders in runtime, just like [described here](#injecting-data-from-the-server-into-the-page). Alternatively you can rebuild the app on the server anytime you change them.
+**环境变量在构建期间才会被嵌入**.由于 Create React App 生成静态 HTML/CSS/JS 包,因此无法在运行时读取它们,如果要在运行时读取它们,需要将 HTML 加载到服务器内存中,并在运行时替换成想要的值,可参照 [这个描述](#在服务器端添加数据到页面).或者,你可以在服务器上随时重新构建应用.
 
->Note: You must create custom environment variables beginning with `REACT_APP_`. Any other variables except `NODE_ENV` will be ignored to avoid accidentally [exposing a private key on the machine that could have the same name](https://github.com/facebookincubator/create-react-app/issues/865#issuecomment-252199527). Changing any environment variables will require you to restart the development server if it is running.
+>请注意:自定义环境变量必须以 `REACT_APP_` 开头,因为其他的环境变量除了 `NODE_ENV` 以外都会被忽略,这是为了 [避免和系统本机的公钥冲突](https://github.com/facebookincubator/create-react-app/issues/865#issuecomment-252199527) .如果修改了环境变量,必须重启项目.
 
-These environment variables will be defined for you on `process.env`. For example, having an environment
-variable named `REACT_APP_SECRET_CODE` will be exposed in your JS as `process.env.REACT_APP_SECRET_CODE`.
+自定义的环境变量将会被定义在 `process.env` 中.例如,定义了一个名为 `REACT_APP_SECRET_CODE` 的自定义环境变量,要在 JS 中使用,需通过 `process.env.REACT_APP_SECRET_CODE` 这样的方式来使用.
 
-There is also a special built-in environment variable called `NODE_ENV`. You can read it from `process.env.NODE_ENV`. When you run `npm start`, it is always equal to `'development'`, when you run `npm test` it is always equal to `'test'`, and when you run `npm run build` to make a production bundle, it is always equal to `'production'`. **You cannot override `NODE_ENV` manually.** This prevents developers from accidentally deploying a slow development build to production.
+另外还有一个特殊的内置环境变量 `NODE_ENV` .你可以通过 `process.env.NODE_ENV` 来取到它的值.当运行 `npm start` 时,值为 `'development'` ;当运行 `npm test` 时,值为 `'test'` ;当运行 `npm run build` 时,值为 `'production'` .**`NODE_ENV` 的值不允许手动设置**,这样可以防止开发人员意外的将开发环境部署到生产环境中.
+这些环境变量可以很方便的得到运行环境的相关信息和项目本身之外的敏感数据信息.
 
-These environment variables can be useful for displaying information conditionally based on where the project is
-deployed or consuming sensitive data that lives outside of version control.
-
-First, you need to have environment variables defined. For example, let’s say you wanted to consume a secret defined
-in the environment inside a `<form>`:
+使用环境变老之前,首先需要定义环境变量.例如,你想要在 `<form>` 中使用在环境中定义的变量:
 
 ```jsx
 render() {
   return (
     <div>
-      <small>You are running this application in <b>{process.env.NODE_ENV}</b> mode.</small>
+      <small>你正在 <b>{process.env.NODE_ENV}</b> 模式下运行应用.</small>
       <form>
         <input type="hidden" defaultValue={process.env.REACT_APP_SECRET_CODE} />
       </form>
@@ -886,24 +880,22 @@ render() {
 }
 ```
 
-During the build, `process.env.REACT_APP_SECRET_CODE` will be replaced with the current value of the `REACT_APP_SECRET_CODE` environment variable. Remember that the `NODE_ENV` variable will be set for you automatically.
+在构建期间, `process.env.REACT_APP_SECRET_CODE` 将会被替换为自定义环境变量 `REACT_APP_SECRET_CODE` 的值.变量 `NODE_ENV` 的值将自动被设置.
 
-When you load the app in the browser and inspect the `<input>`, you will see its value set to `abcdef`, and the bold text will show the environment provided when using `npm start`:
+当运行 `npm start` 后,浏览器加载应用,你可以看到 `<input>` 的 value 被设置为 `absdef` ,粗体的文本则显示当前的运行环境.
 
 ```html
 <div>
-  <small>You are running this application in <b>development</b> mode.</small>
+  <small>你正在 <b>development</b> 模式下运行应用.</small>
   <form>
     <input type="hidden" value="abcdef" />
   </form>
 </div>
 ```
 
-The above form is looking for a variable called `REACT_APP_SECRET_CODE` from the environment. In order to consume this
-value, we need to have it defined in the environment. This can be done using two ways: either in your shell or in
-a `.env` file. Both of these ways are described in the next few sections.
+上面的示例中,程序会从当前环境中查找名为 `REACT_APP_SECRET_CODE` 的变量.为了可以使用这个变量,我们需要在当前环境中定义.有两种方式可以定义:通过命令在 shell 中定义,或在 `.env` 文件中定义.后面的章节中会介绍这两种方式. 
 
-Having access to the `NODE_ENV` is also useful for performing actions conditionally:
+通过在 `NODE_ENV` 中添加一些判断条件执行某些特定操作也是很有用的:
 
 ```js
 if (process.env.NODE_ENV !== 'production') {
@@ -911,27 +903,26 @@ if (process.env.NODE_ENV !== 'production') {
 }
 ```
 
-When you compile the app with `npm run build`, the minification step will strip out this condition, and the resulting bundle will be smaller.
+当使用 `npm run build` 编译应用程序时,编译工具会去掉这些判断条件,以缩小编译后的文件大小.
 
 ### 在 HTML 中引用环境变量
 
->Note: this feature is available with `react-scripts@0.9.0` and higher.
+>请注意:此功能仅在 `react-scripts@0.9.0` 或更高版本提供.
 
-You can also access the environment variables starting with `REACT_APP_` in the `public/index.html`. For example:
+你可以再 `public/index.html` 文件中访问以 `REACT_APP_` 开头的自定义环境变量.例如:
 
 ```html
 <title>%REACT_APP_WEBSITE_NAME%</title>
 ```
 
-Note that the caveats from the above section apply:
+请注意,上述说明适用于:
 
-* Apart from a few built-in variables (`NODE_ENV` and `PUBLIC_URL`), variable names must start with `REACT_APP_` to work.
-* The environment variables are injected at build time. If you need to inject them at runtime, [follow this approach instead](#generating-dynamic-meta-tags-on-the-server).
+* 除一些内置变量 (`NODE_ENV` 和 `PUBLIC_URL`) 之外,变量命名必须以 `REACT_APP_` 开头.
+* 环境变量在构建时注入,如果需要在运行时注入,请改为 [使用此方法](#在服务器上生成动态-meta-标签)
 
 ### 在 Shell 中添加临时环境变量
 
-Defining environment variables can vary between OSes. It’s also important to know that this manner is temporary for the
-life of the shell session.
+定义环境变量可能因操作系统不同而不同.需要注意的是,通过这种方式定义的变量只在当前 shell 会话期间有效.
 
 #### Windows (cmd.exe)
 
@@ -939,7 +930,7 @@ life of the shell session.
 set "REACT_APP_SECRET_CODE=abcdef" && npm start
 ```
 
-(Note: Quotes around the variable assignment are required to avoid a trailing whitespace.)
+(注意:变量赋值与引号之间没有空格)
 
 #### Windows (Powershell)
 
@@ -955,53 +946,52 @@ REACT_APP_SECRET_CODE=abcdef npm start
 
 ### 在 .env 文件中添加开发环境的变量
 
->Note: this feature is available with `react-scripts@0.5.0` and higher.
+>请注意:此功能仅在 `react-scripts@0.5.0` 或更高版本提供.
 
-To define permanent environment variables, create a file called `.env` in the root of your project:
+要定义环境常量,在项目根目录中创建 `.env` 文件,文件内容如下:
 
 ```
 REACT_APP_SECRET_CODE=abcdef
 ```
->Note: You must create custom environment variables beginning with `REACT_APP_`. Any other variables except `NODE_ENV` will be ignored to avoid [accidentally exposing a private key on the machine that could have the same name](https://github.com/facebookincubator/create-react-app/issues/865#issuecomment-252199527). Changing any environment variables will require you to restart the development server if it is running.
+>请注意:自定义环境变量必须以 `REACT_APP_` 开头,因为其他的环境变量除了 `NODE_ENV` 以外都会被忽略,这是为了 [避免和系统本机的公钥冲突](https://github.com/facebookincubator/create-react-app/issues/865#issuecomment-252199527) .如果修改了环境变量,必须重启项目.
 
-`.env` files **should be** checked into source control (with the exclusion of `.env*.local`).
+`.env` 文件 **应该** 添加到代码版本控制中( `.env*.local` 除外).
 
-#### What other `.env` files can be used?
+#### 其他可以使用的 `.env` 文件
 
->Note: this feature is **available with `react-scripts@1.0.0` and higher**.
+>请注意:此功能仅在 `react-scripts@1.0.0` 或更高版本提供.
 
-* `.env`: Default.
-* `.env.local`: Local overrides. **This file is loaded for all environments except test.**
-* `.env.development`, `.env.test`, `.env.production`: Environment-specific settings.
-* `.env.development.local`, `.env.test.local`, `.env.production.local`: Local overrides of environment-specific settings.
+* `.env` : 默认文件.
+* `.env.local` : 本地覆盖. **除 test 环境模式下,其他环境都会加载此文件.**
+* `.env.development`, `.env.test`, `.env.production` : 不同环境模式下配置.
+* `.env.development.local`, `.env.test.local`, `.env.production.local` : 不同环境模式下本地配置.
 
-Files on the left have more priority than files on the right:
+左侧文件比右侧文件具有更高的优先级:
 
 * `npm start`: `.env.development.local`, `.env.development`, `.env.local`, `.env`
 * `npm run build`: `.env.production.local`, `.env.production`, `.env.local`, `.env`
-* `npm test`: `.env.test.local`, `.env.test`, `.env` (note `.env.local` is missing)
+* `npm test`: `.env.test.local`, `.env.test`, `.env` (注:这里没有 `.env.local` )
 
+如果没有明确的设置这些变量,它们会有相应的默认值,有关更多详情,请参阅 [dotenv 文档](https://github.com/motdotla/dotenv)
 These variables will act as the defaults if the machine does not explicitly set them.<br>
-Please refer to the [dotenv documentation](https://github.com/motdotla/dotenv) for more details.
 
->Note: If you are defining environment variables for development, your CI and/or hosting platform will most likely need
-these defined as well. Consult their documentation how to do this. For example, see the documentation for [Travis CI](https://docs.travis-ci.com/user/environment-variables/) or [Heroku](https://devcenter.heroku.com/articles/config-vars).
+>请注意:如果要定义开发环境变量,则 CI 和/或 托管平台可能也需要定义这些变量.请参阅相应的文档来了解如何操作.例如 [Travis CI](https://docs.travis-ci.com/user/environment-variables/) 或 [Heroku](https://devcenter.heroku.com/articles/config-vars) 文档.
 
-#### Expanding Environment Variables In `.env`
+#### `.env` 中扩展环境变量
 
->Note: this feature is available with `react-scripts@1.1.0` and higher.
+>请注意:此功能仅在 `react-scripts@1.1.0` 或更高版本提供.
 
-Expand variables already on your machine for use in your `.env` file (using [dotenv-expand](https://github.com/motdotla/dotenv-expand)).
+在 `.env` 文件中扩展你设备上已有的变量(使用 [dotenv-expand](https://github.com/motdotla/dotenv-expand) ).
 
-For example, to get the environment variable `npm_package_version`:
+例如,获取环境变量 `npm_package_version` :
 
 ```
 REACT_APP_VERSION=$npm_package_version
-# also works:
+# 也可以这样:
 # REACT_APP_VERSION=${npm_package_version}
 ```
 
-Or expand variables local to the current `.env` file:
+或扩展本地变量:
 
 ```
 DOMAIN=www.example.com
@@ -1011,20 +1001,20 @@ REACT_APP_BAR=$DOMAIN/bar
 
 ## 能否使用修饰器
 
-Many popular libraries use [decorators](https://medium.com/google-developers/exploring-es7-decorators-76ecb65fb841) in their documentation.<br>
-Create React App doesn’t support decorator syntax at the moment because:
+很多热门的库在文档中使用 [修饰器](https://medium.com/google-developers/exploring-es7-decorators-76ecb65fb841).<br>
+Create React App 目前不支持修饰器语法,因为:
 
-* It is an experimental proposal and is subject to change.
-* The current specification version is not officially supported by Babel.
-* If the specification changes, we won’t be able to write a codemod because we don’t use them internally at Facebook.
+* 这是一个实验性提案,未来可能会发生变化.
+* Babel 并不支持当前的规范.
+* 如果规范发生变化,我们无法编写重构件(codemod),因为我们不会在 Facebook 内部使用它们.
 
-However in many cases you can rewrite decorator-based code without decorators just as fine.<br>
-Please refer to these two threads for reference:
+但是在多数情况下,可以在没有修饰器的情况下重写基于修饰器的代码.<br>
+可以参考这两个主题:
 
 * [#214](https://github.com/facebookincubator/create-react-app/issues/214)
 * [#411](https://github.com/facebookincubator/create-react-app/issues/411)
 
-Create React App will add decorator support when the specification advances to a stable stage.
+当修饰器规范趋于稳定阶段时, Create React App 将会支持修饰器.
 
 ## 使用 AJAX 请求数据
 
